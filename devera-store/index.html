@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header-item{
+            display: inline-block;
+            padding: 0 10px;
+        }
+        .select-item{
+            width: 50px;
+        }
+        .footer{
+            text-align: center;
+            
+        }
+        .My-image{
+            width: 50px;
+        }
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr{
+            margin: 10px 0;
+        }
+        .btn-create{
+            padding: 0 26px;
+            margin: 0 10px;
+        }
+        .input-product-name, .input-price, .select-item{
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Devera Store</h1>
+        <ul class="header">
+            <li class="header-item"><a href="#">Hotest</a></li>
+            <li class="header-item"><a href="#">Best Seller</a></li>
+            <li class="header-item"><a href="#">Trending</a></li>
+            <li class="header-item"><a href="#">Sport</a></li>
+            <li class="header-item"><a href="#">Music</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <header>This is header!</header>
+        <h1>Add Product</h1>
+        <table>
+            <tr>
+                <td>
+                    <label for="product-name">Product name</label>
+                </td>
+                <td>
+                    <input class="input-product-name" type="text" id="product-name">    
+                </td>
+                <td>    
+                    <label for="product-name">Category</label>
+                </td>
+                <td>
+                    <select class="select-item" name="category" id="category">
+                        <option value="">option1</option>
+                        <option value="">option2</option>
+                        <option value="">option3</option>
+                        <option value="">option4</option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td>    
+                    <label for="">Price</label>
+                </td>
+                <td>    
+                    <input class="input-price" type="number" id="" min="1" max="10" step="1">
+                </td>
+                <td></td>
+                <td>
+                    <input type="checkbox">
+                    <label for="">Free ship</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="">Description</label>
+                </td>
+                <td>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="desc"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>Image</p>
+                </td>
+                <td>
+                    <img src="./assets/img/image1.jpg" class="My-image" alt="html5">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" name="input-radio" value="radio1">
+                    <label for="">radio1</label>
+                </td>
+
+                <td rowspan="2">
+                    <input class="btn-create" type="button" value="Create">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" name="input-radio" value="radio2">
+                    <label for="">radio2</label>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Devera 2022</p>
+    </div>
+</body>
+</html>
