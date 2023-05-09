@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .nav{
     background-color: #FFC297;
     display: flex;
@@ -6,26 +11,40 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    left: 0;
-    justify-content: space-between;
 }
 
-.nav img{
-    width: 40px;
-    padding: 30px 20px;
-}
-
-.nav-start p{
-}
-
-.nav-start img{
+.nav .img-logo{
     width: 65px;
+    height: 65px;
+    /* position: absolute;
+    left: 27px;
+    top: 31px; */
+    margin: auto;
+
 }
 
-.nav img:last-child{
-    /* align-self: flex-end; */
+.nav .img-home{
+
 }
 
-.nav-end img{
-    width: 38px;
+.nav .img-bell{
+
+}
+
+.nav .img-calendar{
+
+}
+
+.nav .img-MA{
+
+}
+
+.nav .img-user{
+
+}
+
+.sidebar{
+    background-color: aqua;
+    width: 100px;
+    height: 100%;
 }
