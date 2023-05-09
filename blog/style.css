@@ -1,6 +1,7 @@
 .header{
     height: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .header p{
@@ -10,7 +11,11 @@
 }
 
 .slider{
-    background-color: gray;
+    /* background-color: gray; */
+    /* background-image: linear-gradient(to right, pink, purple); */
+    background-color: #85FFBD;  
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+
     height: 200px;
     text-align: center;
 }
@@ -82,6 +87,7 @@
 .subscribe2{
     display: flex;
     justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 .subscribe2 span{
@@ -98,4 +104,11 @@
 
 .enter-email button{
     width: 110px;
+}
+
+#demo-background{
+    display: inline;
+    border: yellow solid 8px;
+    background-clip: border-box;
+    background-color: red;
 }

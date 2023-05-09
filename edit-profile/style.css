@@ -1,0 +1,31 @@
+.nav{
+    background-color: #FFC297;
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    justify-content: space-between;
+}
+
+.nav img{
+    width: 40px;
+    padding: 30px 20px;
+}
+
+.nav-start p{
+}
+
+.nav-start img{
+    width: 65px;
+}
+
+.nav img:last-child{
+    /* align-self: flex-end; */
+}
+
+.nav-end img{
+    width: 38px;
+}
