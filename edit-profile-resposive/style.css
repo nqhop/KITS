@@ -238,8 +238,43 @@
     border: 2px #FF7008 solid;
     border-radius: 5px;
     margin: 0 20px;
+
+    transition-property: transform;
+    transition-duration: 1s;
 }
 
+.btn_save:hover{
+    transform: scale(1.2);
+}
+
+.transition{
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.transition img{
+    width: 100%;
+    position: absolute;
+
+    transition-duration: 1s;
+    transform-origin: bottom left;
+}
+
+.transition:hover img.img1{
+    transform: rotate(10deg);
+}
+
+.transition:hover img.img2{
+    transform: rotate(20deg);
+}
+
+.transition:hover img.img3{
+    transform: rotate(30deg);
+}
+
+/* Responsive */
 
 @media only screen and (max-width: 1200px) {
     .sidebar{display: none;}
@@ -259,3 +294,4 @@
         margin-bottom: 20px;
     }
 }
+
