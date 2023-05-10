@@ -247,6 +247,8 @@
     transform: scale(1.2);
 }
 
+/* transition */
+
 .transition{
     width: 100px;
     height: 100px;
@@ -272,6 +274,52 @@
 
 .transition:hover img.img3{
     transform: rotate(30deg);
+}
+
+/* animation */
+
+.animation{
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.animation img{
+    width: 100%;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes self-spin {
+    0%{
+        transform: rotateX(0);
+    }
+    50%{
+        transform: rotateY(1800deg);
+    }
+    100%{
+        transform: rotateY(720deg);
+    }
+}
+
+.circle{
+    margin-top: 50px;
+    height: 100px;
+    width: 100px;
+    background-color: #FF7008;
+    border-radius: 50%;
+
+    animation: self-spin 1s infinite;
 }
 
 /* Responsive */
