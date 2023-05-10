@@ -87,6 +87,7 @@
     /* margin: auto; */
     position: absolute;
     bottom: 40px;
+    z-index: 2;
 
     
 }
@@ -95,6 +96,16 @@
     background-color: red;
     background-size: 80px 80px;
 } */
+
+.setting-background{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FF7008;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
 
 .sidebar{
     background-color: aqua;
@@ -110,20 +121,25 @@
     margin: 35px 40px 30px;
 }
 
+.sidebar .setting span{
+    margin-left: 20px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
 .sidebar .setting img{
 
 }
-
+.setting,
 .setting-group{
-    /* display: flex;
-    justify-content: center; */
-    height: 30px;
+    display: flex;
+    align-items: center;
     margin-bottom: 50px;
 }
 
 .setting-group p{
     display: inline-block;
-    line-height: 30px;
+    margin-left: 20px;    
 }
 
 .setting-group img{
@@ -131,7 +147,7 @@
 }
 
 .setting-group .img-pen{
-   
+    
 }
 
 .setting-group .img-bell{
@@ -156,19 +172,24 @@
     padding: 60px;
 }
 
+.content .header p{
+    font-size: 26px;
+    font-weight: 600;
+}
+
 .content input,
 .content select{
     padding: 8px;
     border-radius: 5px;
     border: 2px gray solid;
 }
-
 .input-profile{
     margin-bottom: 20px;
 }
 
 .content label{
-    /* margin-bottom: 10px; */
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
 .header{
@@ -184,6 +205,7 @@
 .name{
     display: flex;
     justify-content: space-between;
+    /* flex-direction: column; */
 }
 
 .name input{
@@ -216,4 +238,24 @@
     border: 2px #FF7008 solid;
     border-radius: 5px;
     margin: 0 20px;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .sidebar{display: none;}
+    .content{
+        left: 120px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .name{
+        flex-direction: column;
+    }
+    .name input{
+        width: 100%;
+    }
+    .first-name{
+        margin-bottom: 20px;
+    }
 }
