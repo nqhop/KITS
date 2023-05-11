@@ -1,0 +1,178 @@
+body {
+    margin: 0 auto;
+    background-color: lightgrey;
+}
+
+.wrapper {
+    background-color: white;
+    padding: 30px 70px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.header .nav a{
+    text-decoration: none;
+    color: #1E1E1E;
+}
+
+.header .top-icon{
+    display: flex;
+}
+.header .top-icon li{
+    margin: auto 10px;
+}
+
+.header .top-icon li:last-child{
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+.header .top-icon li:last-child::before{
+    content: "|";
+    font-size: 24px;
+    padding-right: 24px;
+}
+
+
+
+ul {
+    text-align: center;
+}
+
+#content {
+    overflow: auto;
+}
+
+/* .column1,
+.column2,
+.column3 {
+    width: 31.3%;
+    float: left;
+} */
+
+/* .column1 {
+    float: left;
+}
+
+.column2 {
+    margin: 0% 3%;
+}
+
+.column3 {
+    float: right;
+    margin: 0%;
+} */
+
+
+li {
+    display: inline;
+    padding: 0.5em;
+}
+
+.banner{
+    position: relative;
+}
+
+.banner{
+    height: 512px;
+}
+
+.banner,
+.best-selling{
+    margin-bottom: 1em;
+    padding: 20px;
+    border-radius: 24px;
+    background-color: #C1DCDC;
+    /* background-color: #efefef; */
+
+}
+
+.banner .buy-info{
+    display: flex;
+}
+
+.banner .quality{
+    line-height: 12px;
+    margin: 10px;
+}
+.banner .quality p:first-child{
+    font-size: 32px;
+}
+
+.banner .quality:first-child{
+    /* margin-right: 30px; */
+}
+
+.banner .quality:first-child{
+    padding-right: 10px;
+    border-right: 1px solid black;
+}
+
+.banner .input-text{
+    position: relative;
+    display: inline-block;
+}
+
+.banner .input-text input{
+    height: 36px;
+    width: 401px;
+    border-radius: 12px;
+    padding-left: 16px;
+}
+
+.search-icon{
+    position: absolute;
+    right: 13px;
+    top: 10px;
+
+}
+
+.banner .plant{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.best-selling{
+    display: flex;
+    justify-content: space-between;
+}
+
+.best-selling-plant button{
+    background-color: #C1DCDC;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: transparent;
+}
+
+.best-selling-plant button::after{
+    content: "";
+    width: 12px;
+    height: 10px;
+    background: url(public/icon/arrow-right.png) center center / 100% no-repeat black;
+}
+
+.best-selling .plants{
+}
+
+.best-selling .plant{
+    
+}
+.best-selling .plant{
+    /* width: 299.33px; */
+    /* width: 25%; */
+    /* height: 363px; */
+    /* background-color: yellowgreen; */
+    margin: 8px;
+    display: flex;
+    float: left;
+}
