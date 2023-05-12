@@ -1,12 +1,8 @@
-:root {
-    --wrapper-left-right: 70px;
-    --blue: #1e90ff;
-    --white: #ffffff;
-}
-
 body {
     margin: 0 auto;
     background-color: lightgrey;
+    font-family: 'Brush Script MT', cursive;
+    --wrapper-left-right: 70px;
 }
 
 .wrapper {
@@ -25,6 +21,10 @@ body {
 .header .logo {
     font-size: 24px;
     margin-right: 20px;
+}
+
+.header .nav{
+    padding-inline-start: 0;
 }
 
 .header .nav a {
@@ -60,27 +60,6 @@ ul {
 #content {
     overflow: auto;
 }
-
-/* .column1,
-.column2,
-.column3 {
-    width: 31.3%;
-    float: left;
-} */
-
-/* .column1 {
-    float: left;
-}
-
-.column2 {
-    margin: 0% 3%;
-}
-
-.column3 {
-    float: right;
-    margin: 0%;
-} */
-
 
 li {
     display: inline;
@@ -129,7 +108,7 @@ li {
     height: 36px;
     width: 401px;
     border-radius: 12px;
-    padding-left: 16px;
+    /* padding-left: 16px; */
     border: transparent;
 }
 
@@ -305,17 +284,34 @@ li {
 }
 
 .categories .explore button {
-    margin-top: 10px;
-    padding: 6px 24px;
+    /* margin-top: 10px; */
+    padding: 6px 38px;
     border-radius: 8px;
     border: transparent;
 }
 
-.categories .explore .explore-txt::after {
+.categories .explore .button > div{
+    position: relative;
+    display: inline-block;
+} 
+
+.categories .explore .button {
+    position: relative;
+}
+
+.categories .explore button::after{
     content: "";
-    width: 12px;
-    height: 10px;
-    background: url(public/icon/arrow-right.png) center center / 100% no-repeat black;
+    background-image: url("public/icon/arrow-right.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 21px;
+    height: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 8.87px;
+    font-weight: 500;
+    color: #000000;
 }
 
 .say-what {
@@ -376,7 +372,7 @@ Custom Horizontal Scrollbar */
 }
 
 .pseudo-item {
-    height: 250px;
+    height: 255px;
     width: 700px;
     margin-right: 59px;
     flex-shrink: 0;
@@ -461,6 +457,7 @@ Custom Horizontal Scrollbar */
 .footer-right th,
 .footer-right td {
     padding: 16px 26px 16px 0;
+    text-align: left;
 }
 
 @media only screen and (max-width: 1335px) {
@@ -491,12 +488,18 @@ Custom Horizontal Scrollbar */
         height: 286px;
     }
 
-    .banner .input-text {
+    .banner .input-text > div {
         width: 100%;
     }
 
     .banner .input-text input {
-        width: 94%;
+        width: calc(100% -32px);
+        padding: 0 16px;
+        /* box-sizing: border-box; */
+    }
+
+    .search-icon{
+        display: none;
     }
 
     .categories .image1 {
