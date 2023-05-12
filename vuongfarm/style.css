@@ -90,6 +90,8 @@ li {
 .banner {
     position: relative;
     height: 512px;
+    background-color: #C1DCDC;
+
 }
 
 .banner,
@@ -98,7 +100,6 @@ li {
     margin: 1em var(--wrapper-left-right);
     padding: 20px;
     border-radius: 24px;
-    background-color: #C1DCDC;
 }
 
 .banner .buy-info {
@@ -129,13 +130,13 @@ li {
     width: 401px;
     border-radius: 12px;
     padding-left: 16px;
+    border: transparent;
 }
 
 .search-icon {
     position: absolute;
     right: 13px;
     top: 10px;
-
 }
 
 .banner .plant {
@@ -152,18 +153,30 @@ li {
     width: 20%;
 }
 
+.best-selling-plant .button{
+    position: relative;
+    display: inline-block;
+}
 .best-selling-plant button {
     background-color: #C1DCDC;
-    padding: 12px 24px;
+    padding: 12px 35px 12px 30px;
     border-radius: 8px;
     border: transparent;
 }
 
 .best-selling-plant button::after {
     content: "";
-    width: 12px;
-    height: 10px;
-    background: url(public/icon/arrow-right.png) center center / 100% no-repeat black;
+    background-image: url("public/icon/arrow-right.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 21px;
+    height: 12px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 8.87px;
+    font-weight: 500;
+    color: #000000;
 }
 
 .best-selling .plants {
@@ -173,13 +186,19 @@ li {
 .best-selling .plant {
     width: 33.333%;
     float: left;
-    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* position: relative; */
 }
 
 .best-selling .plant .name {
     margin-top: 8px;
     margin-bottom: -8px;
     font-weight: 600;
+    margin-left: 0;
+    /* position: absolute; */
+
 }
 
 .best-selling .plant .price {
@@ -406,29 +425,25 @@ Custom Horizontal Scrollbar */
     position: relative;
 }
 
-.footer-left p:first-child{
+.footer-left p:first-child {
     font-weight: 700;
 }
 
 .footer-left p:nth-child(2),
-.footer-left p:nth-child(4){
+.footer-left p:nth-child(4) {
     color: #1E1E1E;
 }
 
-.footer-left p:nth-child(4){
+.footer-left p:nth-child(4) {
     position: absolute;
     bottom: 0;
 }
 
-/* .footer-left{
-    display: flex;
-    flex-direction: column;
-} */
-
-.footer-left .media{
+.footer-left .media {
     display: flex;
 }
-.footer-left .media-icon{
+
+.footer-left .media-icon {
     width: 40px;
     height: 40px;
     display: flex;
@@ -437,16 +452,71 @@ Custom Horizontal Scrollbar */
     margin: 8px;
 }
 
-.footer-left .media-icon div{
+.footer-left .media-icon div {
     margin: auto;
 }
 
-.footer-left .media-icon img{
+.footer-left .media-icon img {}
+
+.footer-right th,
+.footer-right td {
+    padding: 16px 26px 16px 0;
+}
+
+@media only screen and (max-width: 1335px) {
+    .best-selling .plant {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .best-selling .plants {
+        width: 100%;
+    }
+
+    .best-selling {
+        flex-direction: column;
+    }
+
+    .best-selling-plant {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .banner .plant {
+        display: none;
+    }
+
+    .banner {
+        height: 286px;
+    }
+
+    .banner .input-text {
+        width: 100%;
+    }
+
+    .banner .input-text input {
+        width: 94%;
+    }
+
+    .categories .image1 {
+        display: none;
+    }
+
+    .categories .image3 {
+        margin-top: 48px;
+    }
 
 }
 
-.footer-right tr,
-.footer-right td{
-    padding: 16px 26px 16px 0;
-    
+@media only screen and (max-width: 800px) {
+    .best-selling .plant {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 646px) {
+    .categories .image2 {
+        display: none;
+    }
 }
