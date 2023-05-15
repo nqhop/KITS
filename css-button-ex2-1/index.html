@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            position: relative;
+        }
+
+        .my-div {
+            width: 573px;
+            height: 70px;
+            text-align: center;
+            position: relative;
+            border: 4px solid dodgerblue;
+            border-radius: 35px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .my-div::before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 573px;
+            height: 70px;
+            left: -4px;
+            top: -4px;
+            border: 8px solid green;
+            border-radius: 35px;
+            z-index: -1;
+        }
+
+        .my-div::after {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 573px;
+            height: 70px;
+            left: -4px;
+            top: -4px;
+            border: 12px solid pink;
+            border-radius: 35px;
+            z-index: -2;
+        }
+
+        body::before {
+            position: absolute;
+            content: "";
+            width: 30px;
+            height: 100%;
+            margin-right: 488px;
+            background: url(check2.png) center center / 100% no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="my-div">Bài tập CSS</div>
+</body>
+
+</html>
