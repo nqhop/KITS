@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="introduce">Hello world</div>
+    <div id="introduce">I am dev</div>
+
+    <input type="text" name="up">
+    <input type="text" name="up">
+
+    <div id="myName">My name</div>
+    <button id="btn" onclick="clickMe()" ondblclick="dbClick()" onmousedown="mouseDown()" onmouseup="mouseUp()">click me</button>
+
+    <p id="yourName">your name:</p>
+    <input id="inputYourName" type="text" onchange="onChangeInput()"><br>
+    <select name="" id="mySelect">
+        <option value="Audi">Audi</option>
+        <option value="BMW">BMW</option>
+        <option value="Honda">Honda</option>
+        <option value="Volvo">Volvo</option>
+    </select>
+</body>
+
+    <script>
+        document.getElementById("introduce").style.color = "red";
+        document.getElementsByClassName("introduce")[0].style.color = "green";
+        document.getElementById("introduce").textContent = "hop";
+
+        document.getElementsByName("up")[0].style.border = "3px solid blue";
+
+        const para = document.createElement("p");
+        para.textContent = "I am a tab p";
+        para.style.color = "pink";
+        para.style.display = "inline-block";
+        para.style.backgroundColor = "blue";
+        para.style.padding = "0px 4px";
+        document.body.appendChild(para);
+
+        function clickMe(){
+            document.getElementById("myName").innerText = "NQ Hop";
+            alert("The button was clicked");
+        }
+
+        function dbClick(){
+            document.getElementById("myName").innerText = "DB click";
+        }
+
+        function mouseDown(){
+            document.getElementById('btn').style.color = "red";
+        }
+
+        function mouseUp(){
+            document.getElementById('btn').style.color = "blue";
+        }
+
+        function onChangeInput(){
+            let x = document.getElementById("inputYourName").value;
+            document.getElementById("yourName").innerHTML = "Your name: " + x;
+        }
+
+        // Bài tập Array
+        const students = ["Vỹ", "Khương", "Quỳnh Anh", "Nhất Anh", "Tiến Anh", "Đức Anh"];
+        console.log(students.length);
+        const viTri = (name) => {
+            return console.log(`Index của ${name} là ${students.indexOf(name)}`);
+        }
+        viTri("Nhất Anh");
+
+        // xóa phần tử đầu
+        students.shift();
+        console.log(students);
+
+        // Tạo string mới
+        let stringName = students.join(" - ")
+        console.log(stringName);
+
+        // xóa Quỳnh Anh
+        students.splice(students.indexOf("Quỳnh Anh"), 1);
+        console.log(students);
+
+        // cho 1 array mới
+        const students2 = ["Sơn Anh", "Phước"];
+        console.log(students.concat(students2));
+
+        // random
+        const randomFunction = (min = 4, max = 8) => {
+            // console.log(Math.floor(Math.random() * 100) + 1);
+
+            // console.log(Math.floor(Math.random() * max - min + 1) + min);
+            console.log(Math.floor(Math.random() * max) + min + 1);
+        }
+        randomFunction()
+
+    </script>
+
+</html>
