@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">Đổi background màu đỏ</div>
+    <div id="div2">Đổi background màu xanh</div>
+
+    <button onclick="hideFunction()">Hide</button>
+    <button onclick="showFunction()">show</button>
+    <div id="hide-show">Hide and Show</div>
+    <script>
+        // object
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue",
+            sourses: ["a", "b", "c", "d"]
+        };
+
+        console.log(Object.keys(person))
+        console.log(Object.values(person))
+
+        // string
+        let originalString = "Lop hoc web cua KITS";
+        console.log(originalString.length);
+        console.log(originalString.slice(originalString.indexOf('web'), originalString.indexOf('web') + 3));
+
+        originalString = originalString.replaceAll(' ',',');
+        console.log(originalString);
+
+        const isDev = (text) => text.indexOf('Dev') === -1 ? false : true;
+        console.log(isDev('Hi Dev'));
+
+        // Bai tap
+        const isPrimeNumber = (n) => {
+            if (n < 2) return false;
+            for (let i = 2; i <= Math.sqrt(n); i++){
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+        console.log('isPrimeNumber ' + isPrimeNumber(4));
+        
+        const expresFunction = (n) => {
+            if (n <= 0) return "So khong hop le";
+            expres = 0;
+            for(let i = 1; i <= n; i++){
+                expres += i / n;
+            }
+            return expres;
+        }
+        console.log(expresFunction(10));
+
+        const isValidEmail = (email) => {
+            const res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+            return res.test(String(email).toLowerCase());
+        }
+        console.log("isValidEmail " + isValidEmail('test@gmail.com'));
+
+        document.getElementById('div1').style.backgroundColor = "red";
+        document.getElementById('div2').style.backgroundColor = "blue";
+
+        function hideFunction() {
+            document.getElementById('hide-show').style.display = "none";
+        }
+        
+        function showFunction() {
+            document.getElementById('hide-show').style.display = "block";
+        }
+    </script>
+</body>
+</html>

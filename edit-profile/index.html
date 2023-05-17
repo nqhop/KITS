@@ -1,119 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit profile</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/fonts/themify-icons/themify-icons.css">
 </head>
+
 <body>
-    
-    <div class="nav">
-        <!-- <div class="nav-start"> -->
-            <div class="nav-icon">
-                <img class="img-logo" src="img/logo@0 1.png" alt="">
+    <div class="main">
+        <div class="aside">
+            <ul class="nav">
+                <li class="mt-8"><img class="logo-kits35 " src="assets/icon/logo.png" alt=""></li>
+                <li><i class="ti-home"></i></li>
+                <li><i class="ti-bell"></i></li>
+                <li><i class="ti-calendar"></i></li>
+                <li><i class="ti-stats-up"></i></li>
+                <li><i class="ti-user"></i></li>
+                <li class="nav-setting"><i class="ti-settings"></i></li>
+
+            </ul>
+        </div>
+
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-item mt-32">
+                    <i class="ti-angle-left"></i>
+                    <p class="sidebar-text">Settings</p>
+                </div>
+
+                <div class="sidebar-item">
+                    <i class="ti-slice"></i>
+                    <p class="sidebar-text">Edit profile</p>
+                </div>
+
+                <div class="sidebar-item">
+                    <i class="ti-bell"></i>
+                    <p class="sidebar-text">Notification</p>
+                </div>
+
+                <div class="sidebar-item">
+                    <i class="ti-lock"></i>
+                    <p class="sidebar-text">Security</p>
+                </div>
+
+                <div class="sidebar-item">
+                    <i class="ti-settings"></i>
+                    <p class="sidebar-text">Appearance</p>
+                </div>
+
+                <div class="sidebar-item">
+                    <i class="ti-help-alt"></i>
+                    <p class="sidebar-text">Help</p>
+                </div>
             </div>
-            <div class="nav-icon">
-                <img class="img-home" src="img/home.png" alt="">
+        </div>
+
+        <div class="content">
+            <div class="content-heading">
+                <p class="content-sub-heading">Edit profile</p>
+                <img class="logo-kits50" src="assets/icon/logo.png" alt="">
             </div>
-            <div class="nav-icon">
-                <img class="img-bell" src="img/bell.png" alt="">
+
+            <div class="row">
+                <div class="col col-haft">
+                    <label for="first-name">First name</label>
+                    <input name="first-name" id="first-name" class="content-input" type="text" placeholder="First name">
+                </div>
+
+                <div class="col col-haft">
+                    <label for="last-name">Last name</label>
+                    <input name="last-name" id="last-name" class="content-input" type="text" placeholder="Last name">
+                </div>
             </div>
-            <div class="nav-icon">
-                <img class="img-calendar" src="img/calendar.png" alt="">
+
+            <div class="row mt-8">
+                <div class="col col-full">
+                    <label for="email">Email</label>
+                    <input name="email" id="email" class="content-input" type="text" placeholder="Email">
+                </div>
             </div>
-            <div class="nav-icon">
-                <img class="img-MA" src="img/MA.png" alt="">
+            
+            <div class="row mt-8">
+                <div class="col col-full">
+                    <label for="address">Address</label>
+                    <input id="address" name="address" class="content-input" type="text" placeholder="Address">
+                </div>
             </div>
-            <div class="nav-icon">
-                <img class="img-user" src="img/user.png" alt="">
+
+            <div class="row mt-8">
+                <div class="col col-full">
+                    <label for="contact-number">Contact Number</label>
+                    <input name="contact-number" id="contact-number" class="content-input" type="text" placeholder="0">
+                </div>
             </div>
-            <div class="nav-icon nav-icon-setting">
-                <img class="img-setting" src="img/setting.png"  alt="">
+
+            <div class="row mt-8">
+                <div class="col col-haft">
+                    <label for="">City</label>
+                    <select class="content-select" name="city" id="city">
+                        <option value="HaNoi">Ha noi</option>
+                        <option value="HoChiMinh">Ho Chi Minh</option>
+                        <option value="HaiPhong">Hai Phong</option>
+                        <option value="DaNang">Da Nang</option>
+                    </select>
+                </div>
             </div>
+        </div>
     </div>
 
-    <div class="sidebar">
-        <div class="setting">
-            <img src="img/arrow-left.png" alt="">
-            <span>Settings</span>
-        </div>
-
-        <div class="setting-group">
-            <img class="img-pen" src="img/pen.png" alt="">
-            <p>Sdit profile</p>
-        </div>
-        <div class="setting-group">
-            <img class="img-bell" src="img/bell.png" alt="">
-            <p>Notification</p>
-        </div>
-        <div class="setting-group">
-            <img class="img-clock" src="img/clock.png" alt="">
-            <p>Security</p>
-        </div>
-        <div class="setting-group">
-            <img class="img-setting" src="img/setting.png" alt="">
-            <p>Appearance</p>
-        </div>
-        <div class="setting-group">
-            <img class="img-help" src="img/help.png" alt="">
-            <p>Help</p>
-        </div>
-    </div>
-
-    <div class="content">
-        <div class="header">
-            <p>Edit profile</p>
-            <img src="img/logo@0 1.png" alt="">
-        </div>
-
-        <div class="input-profile name">
-            <div class="first-name">
-                <label for="">First name</label>
-                <br>
-                <input type="text" placeholder="Luan">
-            </div>
-            <div class="last-name">
-                <label for="">First name</label>
-                <br>
-                <input type="text" placeholder="Vuong">
-            </div>
-        </div>
-
-        <div class="input-profile email">
-            <label for="">Email</label>
-            <br>
-            <input type="text" name="" id="" placeholder="example@gmail.com">
-        </div>
-
-        <div class="input-profile address">
-            <label for="">Address</label>
-            <br>
-            <input type="text" name="" id="" placeholder="128 Hai Ba Truong">
-        </div>
-
-        <div class="input-profile contact">
-            <label for="">Contact number</label>
-            <br>
-            <input type="text" name="" id="" placeholder="0387878">
-        </div>
-
-        <div class="input-profile city">
-            <label for="">City</label>
-            <br>
-            <select name="city" id="city">
-                <option value="HaNoi">Ha Noi</option>
-                <option value="HoChiMinh">Ho Chi Minh</option>
-                <option value="DaLat">Da Lat</option>
-                <option value="HaiPhong">Hai Phong</option>
-              </select> 
-        </div>
-
-        <div class="btn">
-            <button class="btn_cancel">Cancel</button>
-            <button class="btn_save">Save</button>
-        </div>
     </div>
 </body>
+
 </html>

@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 13px;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+}
+
+.logo-kits35 {
+    width: 35px;
+}
+
+.logo-kits50 {
+    width: 45px;
+}
+
+.mt-8 {
+    margin-top: 8px !important;
+}
+
+.mt-32 {
+    margin-top: 32px !important;
+}
+
+.row {
+    margin-left: -16px;
+    margin-right: -16px;
+}
+.row::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.col {
+    float: left;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-haft {
+    width: 50%;
+}
+
+.nav-setting {
+    position: absolute;
+    bottom: 8px;
+    background-color: #FF7008;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.nav-setting i {
+}
+
+.aside {
+    background-color: #FFC297;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.nav {
+    width: 60px;
+    height: 100%;
+    display: flex;
+    padding: 8px;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav li{
+    margin-top: 40px;
+}
+
+.sidebar {
+    background-color: pink;
+    position: fixed;
+    padding: 8px;
+    top: 0;
+    bottom: 0;
+    left: 60px;
+    width: 120px;
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-item {
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+.sidebar-text {
+    display: inline-block;
+}
+
+/* content */
+
+.content {
+    background-color: aqua;
+    position: absolute;
+    left: 180px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 32px;
+}
+
+.content-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-sub-heading {
+    font-size: 20px;
+}
+
+.content-input,
+.content-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 4px;
+}
