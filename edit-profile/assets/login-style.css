@@ -33,6 +33,10 @@ html {
     margin-top: 8px !important;
 }
 
+.show-message {
+    display: inline-block !important;
+}
+
 .hover-opacity-cursor:hover {
     opacity: 0.8;
     cursor: pointer;
@@ -119,6 +123,13 @@ html {
     height: 28px;
     color: #fff;
     text-transform: uppercase;    
+}
+
+#incorrect-pass-username {
+    left: 60px;
+    position: absolute;
+    color: red;
+    display: none;
 }
 
 .continue-with {
