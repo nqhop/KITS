@@ -39,10 +39,9 @@ async function login() {
     if(accessToken) {
         console.log(accessToken);
         window.localStorage.setItem('userToken', accessToken);
-        window.location = "/";
+        window.location = "/?id=1";
     } else {
 
         incorrectPasswordOrUsername();
     }
-
 }
