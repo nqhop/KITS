@@ -23,7 +23,7 @@ async function fetchData() {
     const contentListItem = document.getElementById("content-list-item");
     for (let item of products) {
         contentListItem.innerHTML += `
-            <div class="content-item" onclick="goToDetail(${item.id})>
+            <div class="content-item" onclick="goToDetail(${item.id})">
                 <div  class="item-img">
                     <img src="${item.image}" alt="">
                 </div>
@@ -36,7 +36,7 @@ async function fetchData() {
 }
 
 function goToDetail(id) {
-    window.location.assign(`datails.html?id=${id}`);
+    window.location.assign(`details.html/?id=${id}`);
 }
 
 window.onload = () => fetchData();
