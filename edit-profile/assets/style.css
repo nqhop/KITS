@@ -58,6 +58,13 @@ html {
     width: 50%;
 }
 
+.settings-opacity1 {
+    opacity: 1 !important;
+}
+.opacity1{
+    opacity: 1 !important;
+}
+
 .nav-setting {
     position: absolute;
     bottom: 8px;
@@ -93,6 +100,10 @@ html {
     margin-top: 40px;
 }
 
+.nav-icon:hover {
+    cursor: pointer;
+}
+
 .sidebar {
     background-color: pink;
     position: fixed;
@@ -111,6 +122,8 @@ html {
 .sidebar-item {
     margin-top: 40px;
     margin-left: 10px;
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 .sidebar-text {
@@ -176,3 +189,14 @@ html {
     background-color: #FF7008;
     color: #fff;
 }
+
+/* suport javascript */
+
+.hideSideBar {
+    display: none;
+}
+
+.positionOfContent {
+    left: 60px !important;
+}
+

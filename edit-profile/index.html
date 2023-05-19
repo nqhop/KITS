@@ -14,25 +14,25 @@
     <div class="main">
         <div class="aside">
             <ul class="nav">
-                <li class="mt-8"><img class="logo-kits35" src="assets/icon/logo.png" alt=""></li>
-                <li><i class="ti-home"></i></li>
-                <li><i class="ti-bell"></i></li>
-                <li><i class="ti-calendar"></i></li>
-                <li><i class="ti-stats-up"></i></li>
-                <li><i class="ti-user"></i></li>
-                <li class="nav-setting"><i class="ti-settings"></i></li>
+                <li class="mt-8"><img class="nav-icon logo-kits35" src="assets/icon/logo.png" alt=""></li>
+                <li><i class="nav-icon ti-home"></i></li>
+                <li><i class="nav-icon ti-bell"></i></li>
+                <li><i class="nav-icon ti-calendar"></i></li>
+                <li><i class="nav-icon ti-stats-up"></i></li>
+                <li><i class="nav-icon ti-user"></i></li>
+                <li class="nav-icon nav-setting"><i class="ti-settings"></i></li>
 
             </ul>
         </div>
 
         <div class="sidebar">
             <div class="sidebar-section">
-                <div class="sidebar-item mt-32">
+                <div class="sidebar-item mt-32 settings-opacity1" onclick="sidebarSetings()">
                     <i class="ti-angle-left"></i>
                     <p class="sidebar-text">Settings</p>
                 </div>
 
-                <div class="sidebar-item">
+                <div class="sidebar-item opacity1">
                     <i class="ti-slice"></i>
                     <p class="sidebar-text">Edit profile</p>
                 </div>
@@ -65,67 +65,69 @@
                 <img class="logo-kits50" src="assets/icon/logo.png" alt="">
             </div>
 
-            <div class="row">
-                <div class="col col-haft">
-                    <label for="first-name">First name</label>
-                    <input name="first-name" id="first-name" class="content-input" type="text" placeholder="First name">
-                </div>
+            <form action="#">
+                <div class="row">
+                    <div class="col col-haft">
+                        <label for="first-name">First name</label>
+                        <input name="first-name" id="first-name" class="content-input" type="text" placeholder="First name">
+                    </div>
 
-                <div class="col col-haft">
-                    <label for="last-name">Last name</label>
-                    <input name="last-name" id="last-name" class="content-input" type="text" placeholder="Last name">
-                </div>
-            </div>
-
-            <div class="row mt-8">
-                <div class="col col-full">
-                    <label for="email">Email</label>
-                    <div class="email-check-box">
-                        <input name="email" id="email" class="content-input" type="text" placeholder="Email">
+                    <div class="col col-haft">
+                        <label for="last-name">Last name</label>
+                        <input name="last-name" id="last-name" class="content-input" type="text" placeholder="Last name">
                     </div>
                 </div>
-            </div>
-            
-            <div class="row mt-8">
-                <div class="col col-full">
-                    <label for="address">Address</label>
-                    <input id="address" name="address" class="content-input" type="text" placeholder="Address">
-                </div>
-            </div>
 
-            <div class="row mt-8">
-                <div class="col col-full">
-                    <label for="contact-number">Contact Number</label>
-                    <input name="contact-number" id="contact-number" class="content-input" type="text" placeholder="0">
-                </div>
-            </div>
-
-            <div class="row mt-8">
-                <div class="col col-haft">
-                    <label for="">City</label>
-                    <select class="content-select" name="city" id="city">
-                        <option value="HaNoi">Ha noi</option>
-                        <option value="HoChiMinh">Ho Chi Minh</option>
-                        <option value="HaiPhong">Hai Phong</option>
-                        <option value="DaNang">Da Nang</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row mt-16">
-                <div class="col col-haft">
-                    <div class="row">
-
-                        <div class="col col-haft">
-                            <button class="edit-profile-btn cancel-btn" onclick="cancelEdit()">Cancel</button>
-                        </div>
-                        
-                        <div class="col col-haft">
-                            <button class="edit-profile-btn save-btn">Save</button>
+                <div class="row mt-8">
+                    <div class="col col-full">
+                        <label for="email">Email</label>
+                        <div class="email-check-box">
+                            <input name="email" id="email" class="content-input" type="text" placeholder="Email">
                         </div>
                     </div>
                 </div>
-            </div>
+                
+                <div class="row mt-8">
+                    <div class="col col-full">
+                        <label for="address">Address</label>
+                        <input id="address" name="address" class="content-input" type="text" placeholder="Address">
+                    </div>
+                </div>
+
+                <div class="row mt-8">
+                    <div class="col col-full">
+                        <label for="contact-number">Contact Number</label>
+                        <input name="contact-number" id="contact-number" class="content-input" type="text" placeholder="0">
+                    </div>
+                </div>
+
+                <div class="row mt-8">
+                    <div class="col col-haft">
+                        <label for="">City</label>
+                        <select class="content-select" name="city" id="city">
+                            <option value="HaNoi">Ha noi</option>
+                            <option value="HoChiMinh">Ho Chi Minh</option>
+                            <option value="HaiPhong">Hai Phong</option>
+                            <option value="DaNang">Da Nang</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mt-16">
+                    <div class="col col-haft">
+                        <div class="row">
+
+                            <div class="col col-haft">
+                                <button type="button" class="edit-profile-btn cancel-btn" onclick="cancelEdit()">Cancel</button>
+                            </div>
+                            
+                            <div class="col col-haft">
+                                <button type="button" class="edit-profile-btn save-btn">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 
