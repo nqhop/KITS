@@ -19,7 +19,7 @@ html {
 }
 
 .logo-kits50 {
-    width: 45px;
+    width: 55px;
 }
 
 .mt-8 {
@@ -140,6 +140,12 @@ html {
     bottom: 0;
     right: 0;
     padding: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.content-max-width {
+    max-width: 700px;
 }
 
 .content-heading {
@@ -150,6 +156,16 @@ html {
 
 .content-sub-heading {
     font-size: 20px;
+}
+
+.content-user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-name {
+    margin-right: 10px;
 }
 
 .content-input,

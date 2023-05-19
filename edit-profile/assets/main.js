@@ -22,7 +22,7 @@ async function login() {
     const userName = document.getElementById('login-name').value;
     const userPass = document.getElementById('login-pass').value;
 
-    let accessToken = await fetch('https://dummyjson.com/auth/login', {
+    let data = await fetch('https://dummyjson.com/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -33,13 +33,13 @@ async function login() {
             username: userName,
             password: userPass,
         })
-    }).then(res => res.json()).then(data => data.token);
+    }).then(res => res.json());
 
-
-    if(accessToken) {
-        console.log(accessToken);
-        window.localStorage.setItem('userToken', accessToken);
-        window.location = "/?id=1";
+    if(data) {
+        console.log(data);
+        window.localStorage.setItem('userToken', data.token);
+        window.localStorage.setItem('userId', data.id);
+        window.location = "/";
     } else {
 
         incorrectPasswordOrUsername();
