@@ -5,7 +5,7 @@
 }
 
 html {
-    font-family: 'Brush Script MT', cursive;
+    /* font-family: 'Brush Script MT', cursive; */
     font-size: 18px;
 }
 
@@ -19,6 +19,12 @@ html {
 
 .row {
     width: 100%;
+}
+
+.row::after{
+    content: '';
+    clear: both;
+    display: block;
 }
 
 .col-full {
@@ -103,6 +109,14 @@ html {
     background-repeat: no-repeat;
     background-position: right;
 } */
+
+.toggle-password {
+    float: right;
+    z-index: 999;
+    position: relative;
+    margin-top: -27px;
+    margin-right: 2px;
+}
 
 .content-login .row label {
 }

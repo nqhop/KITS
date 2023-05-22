@@ -45,3 +45,20 @@ async function login() {
         incorrectPasswordOrUsername();
     }
 }
+
+const togglePassword = document.getElementsByClassName('toggle-password')[0];
+const loginInputPass = document.getElementsByClassName('login-input-pass')[0];
+togglePassword.addEventListener('click', () => {
+    console.log("toggle-password");
+    if(loginInputPass.type == 'password') {
+        loginInputPass.type = 'text';
+        togglePassword.classList.remove('fa-eye');
+        togglePassword.classList.add('fa-eye-slash');
+    } else {
+        loginInputPass.type = 'password';
+        togglePassword.classList.remove('fa-eye-slash');
+        togglePassword.classList.add('fa-eye');
+    }
+    
+
+})
