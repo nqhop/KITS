@@ -1,0 +1,37 @@
+import Header from "components/Header";
+import { SideBar } from "components/SideBar";
+import { Link } from "react-router-dom";
+const { default: styled } = require("styled-components");
+
+const LayoutStyled = styled.div`
+    background-color: #1c233d;
+    min-height: 100vh;
+    .right {
+        float: right;
+        width: 80%;
+    }
+`;
+const ContentStyled = styled.div`
+  background-color: orange;
+  margin-top: 64px;
+  height: 100vh;
+`;
+const SideBarStyled = styled.div`
+    float: left;
+    width: 20%;
+`;
+const PrimaryLayout = ({ children }) => {
+    return (
+        <LayoutStyled>
+            <SideBarStyled>
+                <SideBar></SideBar>
+            </SideBarStyled>
+            <div className="right">
+                <Header/>
+                <ContentStyled></ContentStyled>
+            </div>
+        </LayoutStyled>
+    );
+}
+
+export default PrimaryLayout;
