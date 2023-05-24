@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import logo from 'assets/icons/logo.svg'
 import { NavLink } from "react-router-dom"
+import { NavCard } from "components/Card"
 
 import marketIcon from 'assets/icons/shop.svg'
 import dashBoardIcon from 'assets/icons/dashboard.svg'
@@ -13,8 +14,9 @@ import settingIson from 'assets/icons/settings.svg'
 import lightModeIcon from 'assets/icons/light-mode.svg' 
 
 const StyledSideBar = styled.div`
-    background-color: #fff;
-    height: 100vh;
+    /* background-color: #fff; */
+    background-color: #ccc;
+    min-height: calc(100vh - 64px);
     padding: 32px;
     .logo {
         display: flex;
@@ -44,10 +46,7 @@ const StyledSideBar = styled.div`
 
         margin-top: 40px;
         margin-bottom: 20px;
-    }
-
-   
-    
+    } 
 
     .nav-light-mode {
 
@@ -156,6 +155,7 @@ export const SideBar = () => {
                 <NavItem text="Favourites" path="/" icon={favouritesIcon}/>
                 <NavItem text="History" path="/" icon={historyIcon}/>
                 <NavItem text="Setting" path="/" icon={settingIson}/>
+                
                 <div className="nav-title">Other</div>
                 <div className="nav-light-mode">
                     <NavItem text="Light Mode" path="/" icon={lightModeIcon}/>
@@ -167,6 +167,9 @@ export const SideBar = () => {
                         </label>
                     </div>
                 </div>
+
+                <NavCard></NavCard>
+
             </div>
         </StyledSideBar>
     )

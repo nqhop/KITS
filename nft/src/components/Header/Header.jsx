@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const HeaderStyled = styled.div`
     position  : fixed;
-    width: 100%;
+    width: 80%;
     height: 56px;
     display: flex;
     background-color: aqua;

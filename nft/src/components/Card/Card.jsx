@@ -24,11 +24,11 @@ const StyledCard = styled.div`
         color: #27262E;
     }
     .ammount-content-wrapper {
-    margin-bottom: 12px;
-  }
-  .eth {
-    margin-right: 4px;
-  }
+        margin-bottom: 12px;
+    }
+    .eth {
+        margin-right: 4px;
+    }
 `
 export const Card = ({title, amount, content, percent}) => {
     return <StyledCard>

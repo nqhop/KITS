@@ -4,11 +4,16 @@ import { Link } from "react-router-dom";
 const { default: styled } = require("styled-components");
 
 const LayoutStyled = styled.div`
-    background-color: #1c233d;
+    background-color: green;
     min-height: 100vh;
     .right {
         float: right;
         width: 80%;
+    }
+    .right::after{
+        content: '';
+        display: block;
+        clear: both;
     }
 `;
 const ContentStyled = styled.div`
@@ -28,7 +33,7 @@ const PrimaryLayout = ({ children }) => {
             </SideBarStyled>
             <div className="right">
                 <Header/>
-                <ContentStyled></ContentStyled>
+                <ContentStyled>{children}</ContentStyled>
             </div>
         </LayoutStyled>
     );
