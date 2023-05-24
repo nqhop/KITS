@@ -45,6 +45,74 @@ const StyledSideBar = styled.div`
         margin-top: 40px;
         margin-bottom: 20px;
     }
+
+   
+    
+
+    .nav-light-mode {
+
+        display: flex;
+        justify-content: space-between;
+
+        // toggle-switch
+        /* https://codepen.io/alvarotrigo/pen/zYPydpB?editors=1100 */
+        --light: #d8dbe0;
+        --dark: #28292c;
+        --link: rgb(27, 129, 112);
+        --link-hover: rgb(24, 94, 82);
+        .toggle-switch {
+            position: relative;
+            width: 56px;
+        }
+
+        label {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            background-color: var(--dark);
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        input {
+            position: absolute;
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        input:checked ~ .slider {
+            background-color: var(--light);
+        }
+
+        .slider::before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            box-shadow: inset 4px -4px 0px 0px var(--light);
+            background-color: var(--dark);
+            transition: 0.3s;
+        }
+
+        input:checked ~ .slider::before {
+            transform: translateX(26px);
+            background-color: var(--dark);
+            box-shadow: none;
+        }
+        // end toggle-switch
+    }
+
+    
 `;
 
 const StyledNavItem = styled.div`
@@ -67,6 +135,7 @@ const NavItem = ({text, path, icon}) => {
         </StyledNavItem>
     )
 }
+
 export const SideBar = () => {
     return (
         <StyledSideBar>
@@ -88,7 +157,16 @@ export const SideBar = () => {
                 <NavItem text="History" path="/" icon={historyIcon}/>
                 <NavItem text="Setting" path="/" icon={settingIson}/>
                 <div className="nav-title">Other</div>
-                <NavItem text="Light Mode" path="/" icon={lightModeIcon}/>
+                <div className="nav-light-mode">
+                    <NavItem text="Light Mode" path="/" icon={lightModeIcon}/>
+
+                    <div className = 'toggle-switch'>
+                        <label>
+                            <input type = 'checkbox'/>
+                            <span class = 'slider'></span>
+                        </label>
+                    </div>
+                </div>
             </div>
         </StyledSideBar>
     )
