@@ -5,6 +5,13 @@ import Login from 'containers/Login';
 import Home from 'containers/Home';
 import NotFoundPage from 'containers/NotFoundPage';
 
+let allElements = [].slice.call(document.querySelectorAll('*'));
+    allElements.map(function(element) {
+    element.style.boxSizing = 'border-box';
+    // element.style.margin = '0px';
+    // element.style.padding = '0px';
+});
+
 function App() {
     return (
         // <div className="App">

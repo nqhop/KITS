@@ -3,15 +3,15 @@ import greenArrow from "assets/icons/green-arrow.svg";
 import redArrow from "assets/icons/red-arrow.svg";
 
 const StyleButton = styled.button`
-    width: ${props => `${props.width}px`};
-    height: ${props => `${props.height}px`};
+    width: ${props => props.width};
+    height: ${props => props.height};
     border: ${props => props.boderColor ? `1px solid ${props.boderColor}` : "none"};
-    border-radius: 40px;
+    border-radius: ${props => props.borderRadius};
     background: ${props => props.bgColor};
     font-weight: 500;
     line-height: 21px;
     color: ${props => props.textColor};
-    font-size: ${props => props.fontSize};
+    color: ${props => props.fontSize};
     img {
         margin-right: 8px;
     }
@@ -35,7 +35,8 @@ export const Button = ({ percent, children, width, height, textColor, bgColor, b
 Button.defaultProps = {
     bgColor: '#FFFFFF',
     textColor: '#5429FF',
-    width: 128,
-    height: 46,
-    fontSize: '16px',
+    width: "128px",
+    height: "46px",
+    borderRadius: '40px',
+    fontSize: 16,
 };
