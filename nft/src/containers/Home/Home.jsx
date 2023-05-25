@@ -69,12 +69,12 @@ const AppWrapper = styled.div`
         }
     }
 
-    /* .t1{
+    .t1{
         background-color: red;
     }
     .t2{
         background-color: blue;
-    } */
+    }
     .auctions-header{
         display: flex;
         align-items: center;
@@ -142,6 +142,15 @@ export const Home = () => {
                         </div>
                     </div>
                     <div className="col col-third">
+                        B
+                    </div>
+                </div>
+
+                <div className='row'>
+                    <div className='col col-2-third t1'>
+                        A
+                    </div>
+                    <div className='col col-third t2'>
                         B
                     </div>
                 </div>
