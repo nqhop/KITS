@@ -28,7 +28,7 @@ const AppWrapper = styled.div`
         width: 33.33333%;
     }
     .col-2-third {
-        background-color: red;
+        /* background-color: red; */
         /* width: calc(66.66666% - 20px); */
         width: 66.66666%;
     }
@@ -52,7 +52,8 @@ const AppWrapper = styled.div`
         /* width: 716px; */
         height: 354px;
         /* background: linear-gradient(75.33deg, rgba(0, 0, 0, 0.2) -10.41%, rgba(0, 0, 0, 0) 62.93%), url(${discoverImg}); */
-        background: url(${discoverImg});
+        /* background: url(${discoverImg}); */
+        background: #5429FF;
         border-radius: 12px;
         .title {
             font-weight: 700;
@@ -74,6 +75,16 @@ const AppWrapper = styled.div`
     .t2{
         background-color: blue;
     } */
+    .auctions-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .title-trending-auctions {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 31px;
+        }
+    }
 `
 
 export const Home = () => {
@@ -99,7 +110,7 @@ export const Home = () => {
                         <Button width='128px' height='46px' bgColor='transparent' textColor='#fff' boderColor='#fff'>Create</Button>
                     </div>
 
-                    <div className="col col-third four-card">
+                    <div className="col col-third">
                         <div className="row mb-16">
                             <div className="col col-haft">
                                 <Card title="Revenue" amount="5.00" percent={12.3}></Card>
@@ -121,8 +132,14 @@ export const Home = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col col-2-third">
-                        A
+                    <div className="col col-2-third auctions-header">
+                        <p className="title-trending-auctions">Trending Auctions</p>
+                        <div className="lists-trending-auctions">
+                            <Button width='45px' height='28px' bgColor='#5429FF1A' fontSize='14px'>Art</Button>
+                            <Button width='45px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Music</Button>
+                            <Button width='75px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Collectibles</Button>
+                            <Button width='45px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Utility</Button>
+                        </div>
                     </div>
                     <div className="col col-third">
                         B
