@@ -4,7 +4,7 @@ import { PrimaryLayout } from 'components/Layout';
 import styled from 'styled-components';
 import discoverImg from 'assets/images/discover1.svg'
 
-const AppWrapper = styled.div `
+const AppWrapper = styled.div`
     /* background-color: #0cdaf5; */
     
     .row {
@@ -18,23 +18,34 @@ const AppWrapper = styled.div `
     }
     .col {
         float: left;
-        margin-left: 10px;
-        margin-right: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .col-third {
         background-color: yellow;
         width: 33.33333%;
-        width: calc(33.33333% - 20px);
+        /* width: calc(33.33333% - 20px); */
+        width: 33.33333%;
     }
     .col-2-third {
         background-color: red;
-        width: calc(66.66666% - 20px);
+        /* width: calc(66.66666% - 20px); */
+        width: 66.66666%;
+    }
+    .col-haft {
+        width: 50%;
     }
     .card-wrapper {
         width: 372px;
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
+    }
+    .mb-16{
+        margin-bottom: 16px;
+    }
+    .mr-8{
+        margin-right: 8px;
     }
     .discover{
         padding: 60px;
@@ -54,16 +65,15 @@ const AppWrapper = styled.div `
         }
         Button {
             font-weight: 700;
-            &:nth-child(1){
-                margin-right: 8px;
-                color: red !important;
-            }
         }
     }
-    .four-card {
-        height: 354px;
 
+    /* .t1{
+        background-color: red;
     }
+    .t2{
+        background-color: blue;
+    } */
 `
 
 export const Home = () => {
@@ -73,7 +83,7 @@ export const Home = () => {
                 <Button percent={10}>8.1%</Button>
                 <Button textColor="red" percent={-10}>3.2%</Button>
                 <Button width="77px" height="32px" textColor="white" bgColor="#5429FF">Following</Button>
-                <Button width="77px" height="32px"  bgColor="rgba(84, 41, 255, 0.1)">Follow</Button>
+                <Button width="77px" height="32px" bgColor="rgba(84, 41, 255, 0.1)">Follow</Button>
 
                 <div className='card-wrapper'>
                     <Card title="Revenue" amount="5.00" percent={12.3}></Card>
@@ -82,14 +92,32 @@ export const Home = () => {
                     <Card title="ROI" content="+14.02" percent={-5.1}></Card>
                 </div>
 
-                <div className="row">
+                <div className="row mb-16">
                     <div className="col col-2-third discover">
                         <p className="title">Discover, Create and Sell Your Own NFT.</p>
-                        <Button width='128px' height='46px'>Discover</Button>
+                        <Button className="mr-8" width='128px' height='46px'>Discover</Button>
                         <Button width='128px' height='46px' bgColor='transparent' textColor='#fff' boderColor='#fff'>Create</Button>
                     </div>
+
                     <div className="col col-third four-card">
-                        
+                        <div className="row mb-16">
+                            <div className="col col-haft">
+                                <Card title="Revenue" amount="5.00" percent={12.3}></Card>
+                            </div>
+                            <div className="col col-haft">
+                                <Card title="Revenue" amount="5.00" percent={12.3}></Card>
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col col-haft">
+                                <Card title="Revenue" amount="5.00" percent={12.3}></Card>
+                            </div>
+                            <div className="col col-haft">
+                                <Card title="Revenue" amount="5.00" percent={12.3}></Card>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div className="row">

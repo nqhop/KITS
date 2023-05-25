@@ -18,7 +18,7 @@ const LayoutStyled = styled.div`
     }
 `;
 const ContentStyled = styled.div`
-  background-color: orange;
+  background-color: pink;
   padding: 32px;
   /* margin-top: 108px; */
   margin-top: 120px;
