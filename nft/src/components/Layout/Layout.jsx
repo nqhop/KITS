@@ -18,7 +18,8 @@ const LayoutStyled = styled.div`
 `;
 const ContentStyled = styled.div`
   background-color: orange;
-  margin-top: 64px;
+  /* margin-top: 108px; */
+  margin-top: 120px;
   height: 100vh;
 `;
 const SideBarStyled = styled.div`
