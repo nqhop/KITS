@@ -9,6 +9,7 @@ const LayoutStyled = styled.div`
     .right {
         float: right;
         width: 80%;
+        /* width: -webbkit-fill-available; */
     }
     .right::after{
         content: '';
@@ -18,9 +19,11 @@ const LayoutStyled = styled.div`
 `;
 const ContentStyled = styled.div`
   background-color: orange;
+  padding: 32px;
   /* margin-top: 108px; */
   margin-top: 120px;
-  height: 100vh;
+  /* height: calc(100vh - 120px); */
+  /* height: 100vh; */
 `;
 const SideBarStyled = styled.div`
     float: left;
