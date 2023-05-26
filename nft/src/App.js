@@ -5,10 +5,10 @@ import Login from 'containers/Login';
 import Home from 'containers/Home';
 import NotFoundPage from 'containers/NotFoundPage';
 
-let allElements = [].slice.call(document.querySelectorAll('*'));
-    allElements.map(function(element) {
-    element.style.boxSizing = 'border-box';
-});
+// let allElements = [].slice.call(document.querySelectorAll('*'));
+//     allElements.map(function(element) {
+//     element.style.boxSizing = 'border-box';
+// });
 
 function App() {
     return (

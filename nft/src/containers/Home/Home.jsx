@@ -3,6 +3,7 @@ import { Card } from 'components/Card/Card';
 import { PrimaryLayout } from 'components/Layout';
 import styled from 'styled-components';
 import discoverImg from 'assets/images/discover1.svg'
+import aution1Img from 'assets/images/auction1.svg'
 
 const AppWrapper = styled.div`
     /* background-color: #0cdaf5; */
@@ -11,6 +12,9 @@ const AppWrapper = styled.div`
         margin-left: -10px;
         margin-right: -10px;
     }
+    /* .row-full {
+        width: 100%;
+    } */
     .row::after{
         content: '';
         clear: both;
@@ -20,6 +24,9 @@ const AppWrapper = styled.div`
         float: left;
         padding-left: 10px;
         padding-right: 10px;
+    }
+    .col-full {
+        width: 100%;
     }
     .col-third {
         background-color: yellow;
@@ -46,6 +53,9 @@ const AppWrapper = styled.div`
     }
     .mr-8{
         margin-right: 8px;
+    }
+    .mb-32{
+        margin-bottom: 32px;
     }
     .discover{
         padding: 60px;
@@ -83,6 +93,30 @@ const AppWrapper = styled.div`
             font-weight: 700;
             font-size: 24px;
             line-height: 31px;
+        }
+    }
+    .auction-item{
+        background-color: #fff;
+        padding: 12px;
+        border-radius: 16px;
+        img {
+            width: 100%;
+        }
+        .auction-item-info{
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+        }
+        .auction-item-info-title {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 31px;
+        }
+        .auction-item-info-like {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            color: #747475;
         }
     }
 `
@@ -132,14 +166,42 @@ export const Home = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col col-2-third auctions-header">
-                        <p className="title-trending-auctions">Trending Auctions</p>
-                        <div className="lists-trending-auctions">
-                            <Button width='45px' height='28px' bgColor='#5429FF1A' fontSize='14px'>Art</Button>
-                            <Button width='45px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Music</Button>
-                            <Button width='75px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Collectibles</Button>
-                            <Button width='45px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Utility</Button>
+                    <div className="col col-2-third">
+                        <div className="row">
+                            <div className="col col-full auctions-header">
+                                <p className="title-trending-auctions">Trending Auctions</p>
+                                <div className="lists-trending-auctions">
+                                    <Button width='45px' height='28px' bgColor='#5429FF1A' fontSize='14px'>Art</Button>
+                                    <Button width='64px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Music</Button>
+                                    <Button width='80px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Collectibles</Button>
+                                    <Button width='64px' height='28px' bgColor='transparent' fontSize='14px' textColor='#7A797D'>Utility</Button>
+                                </div>
+                            </div>
                         </div>
+
+                        <div className="row list-auction">
+                            <div className="col col-haft">
+                                <div className="auction-item">
+                                    <img src={aution1Img} alt="" className='mb-16' />
+
+                                    <div className="auction-item-info">
+                                        <p className="auction-item-info-title">
+                                            Ape In Love
+                                        </p>
+                                        <p className="auction-item-info-like">21,5K Likes</p>
+                                    </div>
+                                    <div className="auction-item-author">
+                                        <div className="auction-item-author"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col col-haft auction-item">
+                                <img src={aution1Img} alt="" />
+                            </div>
+                        </div>
+
+
                     </div>
                     <div className="col col-third">
                         B
