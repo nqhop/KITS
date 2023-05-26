@@ -341,55 +341,6 @@ export const Home = () => {
                                 <CardAuction aution1Img={aution2Img} time='08 : 21 : 23' itemTitle='Smilling Ape' like='21,5K' avatar={avatar2} authorName='@m_alisson' eth='6.12'/>
                             </div>
 
-
-
-                            {/* <div className="col col-haft">
-                                <div className="auction-item">
-                                    <div className="auction-item-img">
-                                        <img src={aution1Img} alt="" className='mb-16' />
-                                        <div className="auction-item-time">
-                                            <TimeButton time='12 : 03 : 45' />
-                                        </div>
-                                    </div>
-
-                                    <div className="auction-item-info">
-                                        <p className="auction-item-info-title">
-                                            Ape In Love
-                                        </p>
-                                        <p className="auction-item-info-like">21,5K Likes</p>
-                                    </div>
-                                    <div className="auction-item-author">
-                                        <img className='auction-item-author-avatar' src={avatar} alt="" />
-                                        <p className="auction-item-author-name">@johnti60</p>
-                                    </div>
-                                    <div className="auction-item-bid">
-                                        <p className="auction-item-eth-title">Current Bid</p>
-                                        <Eth amount='9.10'></Eth>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="col col-haft">
-                                <div className="auction-item">
-                                    <img src={aution1Img} alt="" className='mb-16' />
-
-                                    <div className="auction-item-info">
-                                        <p className="auction-item-info-title">
-                                            Ape In Love
-                                        </p>
-                                        <p className="auction-item-info-like">21,5K Likes</p>
-                                    </div>
-                                    <div className="auction-item-author">
-                                        <img className='auction-item-author-avatar' src={avatar} alt="" />
-                                        <p className="auction-item-author-name">@johnti60</p>
-                                    </div>
-                                    <div className="auction-item-bid">
-                                        <p className="auction-item-eth-title">Current Bid</p>
-                                        <Eth amount='9.10'></Eth>
-                                    </div>
-                                </div>
-                            </div> */}
-
                         </div>
 
 

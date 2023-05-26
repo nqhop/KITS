@@ -17,6 +17,7 @@ const StyledSideBar = styled.div`
     /* background-color: #fff; */
     background-color: #ccc;
     min-height: calc(100vh - 64px);
+    min-height: 100vh;
     padding: 32px;
     .logo {
         display: flex;
@@ -59,6 +60,7 @@ const StyledSideBar = styled.div`
         --dark: #28292c;
         --link: rgb(27, 129, 112);
         --link-hover: rgb(24, 94, 82);
+        --light-dark: #F0F0F0; 
         .toggle-switch {
             position: relative;
             width: 56px;
@@ -68,6 +70,7 @@ const StyledSideBar = styled.div`
             position: absolute;
             width: 100%;
             height: 30px;
+            /* background-color: var(--light-dark); */
             background-color: var(--dark);
             border-radius: 50px;
             cursor: pointer;
