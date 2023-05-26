@@ -4,6 +4,9 @@ import { PrimaryLayout } from 'components/Layout';
 import styled from 'styled-components';
 import discoverImg from 'assets/images/discover1.svg'
 import aution1Img from 'assets/images/auction1.svg'
+import avatar from 'assets/images/avatar.svg'
+import ethDarkIcon from 'assets/icons/eth-dark.svg'
+import Eth from 'components/Eth';
 
 const AppWrapper = styled.div`
     /* background-color: #0cdaf5; */
@@ -99,6 +102,7 @@ const AppWrapper = styled.div`
         background-color: #fff;
         padding: 12px;
         border-radius: 16px;
+        margin-bottom: 16px;
         img {
             width: 100%;
         }
@@ -106,6 +110,7 @@ const AppWrapper = styled.div`
             display: flex; 
             justify-content: space-between;
             align-items: center;
+            margin-bottom: -24px;
         }
         .auction-item-info-title {
             font-weight: 700;
@@ -117,6 +122,41 @@ const AppWrapper = styled.div`
             font-size: 16px;
             line-height: 21px;
             color: #747475;
+        }
+        .auction-item-author {
+            display: flex;
+            margin-bottom: -15px;
+        }
+        .auction-item-author-avatar {
+            width: 28px;
+            margin-right: 8px;
+        }
+        .auction-item-author-name {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 21px;
+            color: #747475;
+        }
+
+        .auction-item-bid {
+            display: flex;
+            justify-content: space-between;
+            .auction-item-eth-title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 21px;
+                color: #747475;
+            }
+        }
+    }
+    .creator {
+        padding: 24px;
+        border-radius: 16px;
+        background-color: #fff;
+        .creator-header {
+            display: flex;
+            justify-content: space-between;
         }
     }
 `
@@ -191,21 +231,90 @@ export const Home = () => {
                                         <p className="auction-item-info-like">21,5K Likes</p>
                                     </div>
                                     <div className="auction-item-author">
-                                        <div className="auction-item-author"></div>
+                                        <img className='auction-item-author-avatar' src={avatar} alt="" />
+                                        <p className="auction-item-author-name">@johnti60</p>
+                                    </div>
+                                    <div className="auction-item-bid">
+                                        <p className="auction-item-eth-title">Current Bid</p>
+                                        <Eth amount='9.10'></Eth>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="col col-haft auction-item">
-                                <img src={aution1Img} alt="" />
+                            <div className="col col-haft">
+                                <div className="auction-item">
+                                    <img src={aution1Img} alt="" className='mb-16' />
+
+                                    <div className="auction-item-info">
+                                        <p className="auction-item-info-title">
+                                            Ape In Love
+                                        </p>
+                                        <p className="auction-item-info-like">21,5K Likes</p>
+                                    </div>
+                                    <div className="auction-item-author">
+                                        <img className='auction-item-author-avatar' src={avatar} alt="" />
+                                        <p className="auction-item-author-name">@johnti60</p>
+                                    </div>
+                                    <div className="auction-item-bid">
+                                        <p className="auction-item-eth-title">Current Bid</p>
+                                        <Eth amount='9.10'></Eth>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col col-haft">
+                                <div className="auction-item">
+                                    <img src={aution1Img} alt="" className='mb-16' />
+
+                                    <div className="auction-item-info">
+                                        <p className="auction-item-info-title">
+                                            Ape In Love
+                                        </p>
+                                        <p className="auction-item-info-like">21,5K Likes</p>
+                                    </div>
+                                    <div className="auction-item-author">
+                                        <img className='auction-item-author-avatar' src={avatar} alt="" />
+                                        <p className="auction-item-author-name">@johnti60</p>
+                                    </div>
+                                    <div className="auction-item-bid">
+                                        <p className="auction-item-eth-title">Current Bid</p>
+                                        <Eth amount='9.10'></Eth>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col col-haft">
+                                <div className="auction-item">
+                                    <img src={aution1Img} alt="" className='mb-16' />
+
+                                    <div className="auction-item-info">
+                                        <p className="auction-item-info-title">
+                                            Ape In Love
+                                        </p>
+                                        <p className="auction-item-info-like">21,5K Likes</p>
+                                    </div>
+                                    <div className="auction-item-author">
+                                        <img className='auction-item-author-avatar' src={avatar} alt="" />
+                                        <p className="auction-item-author-name">@johnti60</p>
+                                    </div>
+                                    <div className="auction-item-bid">
+                                        <p className="auction-item-eth-title">Current Bid</p>
+                                        <Eth amount='9.10'></Eth>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
+                    
+                    </div>
 
+                    <div className="col col-third creator">
+                        <div className="creator-header">
+                            <p className="creator-title">Top Creator</p>
+                            <p className="creator-see-all">See All</p>
+                        </div>
                     </div>
-                    <div className="col col-third">
-                        B
-                    </div>
+
                 </div>
 
                 <div className='row'>
