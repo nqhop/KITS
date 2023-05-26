@@ -147,7 +147,7 @@ export const SideBar = () => {
             </div>
             <div className="nav">
                 <NavItem text="home" path="/" icon={dashBoardIcon}/>
-                <NavItem text="Market" path="/" icon={marketIcon}/>
+                <NavItem text="Market" path="/Market" icon={marketIcon}/>
                 <NavItem text="Active Bids" path="/" icon={activeIcon}/>
                 <div className="nav-title">Profile</div>
                 <NavItem text="My Portfolio" path="/" icon={protfolioIcon}/>

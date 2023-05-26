@@ -4,6 +4,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 import Login from 'containers/Login';
 import Home from 'containers/Home';
 import NotFoundPage from 'containers/NotFoundPage';
+import Market from 'containers/Market';
 
 // let allElements = [].slice.call(document.querySelectorAll('*'));
 //     allElements.map(function(element) {
@@ -38,8 +39,11 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home/>}/>
                 <Route path="/Login" element={<Login/>}/>
+                <Route path="/Market" element={<Market/>}/>
                 <Route path='*' element={<NotFoundPage/>}/>
             </Routes>
+
+
         </>
     );
 }
