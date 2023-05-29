@@ -14,7 +14,7 @@ const nav = [
     [
         'Trang chủ',
         DashboardOutlined,
-        ['user', 'sản phẩm', 'đơn hàng']
+        ['sản phẩm', 'đơn hàng']
     ],
     [
         'Users',
