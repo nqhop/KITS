@@ -22,20 +22,20 @@ const Product = () => {
 }
 export const Dashboard = ({ children }) => {
     return (
-        <MyLayout>
+        <MyLayout title='Dashboard'>
             {children}
         </MyLayout>
     )
 }
 
 export const DashboardUser = () => {
-    return <MyLayout>
+    return <MyLayout title='DashboardUser'>
         DashboardUser
     </MyLayout>
 }
 
 export const DashboardProduct = () => {
-    return <MyLayout>
+    return <MyLayout title='DashboardProduct'>
         DashboardProduct
     </MyLayout>
 }

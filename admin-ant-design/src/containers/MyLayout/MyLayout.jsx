@@ -2,8 +2,8 @@ import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/
 import { DashboardOutlined, CustomerServiceOutlined, ShoppingCartOutlined, BarcodeOutlined } from '@ant-design/icons';
 
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import { Space, Table, Tag } from 'antd';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ['1', '2', '3'].map((key) => ({
@@ -72,12 +72,17 @@ const myItems = nav.map((item, index) => {
         }),
     }
 });
-export const MyLayout = ({ children }) => {
+export const MyLayout = ({ children, title }) => {
     const {
         token: { colorBgContainer },
     } = theme.useToken();
     return (
         <Layout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{title}</title>
+                {/* <link rel="canonical" href="http://mysite.com/example" /> */}
+            </Helmet>
             <Header
                 style={{
                     display: 'flex',
@@ -131,7 +136,7 @@ export const MyLayout = ({ children }) => {
                         }}
                     >
                         {children}
-                       
+
                     </Content>
                 </Layout>
             </Content>
