@@ -5,6 +5,8 @@ import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
+import { NavLink } from 'react-router-dom';
+
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ['1', '2', '3'].map((key) => ({
     key,
@@ -72,6 +74,21 @@ const myItems = nav.map((item, index) => {
         }),
     }
 });
+
+const menuItems = [
+    {
+        key: '1',
+        icon: <DashboardOutlined />,
+        label: "Trang chủ",
+        children: [{ key: "1.1", label: <NavLink to="/dashboard/user">User</NavLink> }, { key: "1.2", label: <NavLink to="/sp">sản phẩm</NavLink> }]
+    },
+    {
+        key: '2',
+        icon: <UserOutlined />,
+        label: "User",
+        children: [{ key: "2.1", label: <NavLink to="/show">show</NavLink> }, { key: "2.2", label: <NavLink to="/phanquyen">Phân quyền</NavLink> }]
+    }
+]
 export const MyLayout = ({ children, title }) => {
     const {
         token: { colorBgContainer },
@@ -121,12 +138,12 @@ export const MyLayout = ({ children, title }) => {
                         <Menu
                             mode="inline"
                             defaultSelectedKeys={['1']}
-                            defaultOpenKeys={['sub1']}
+                            defaultOpenKeys={['1']}
                             style={{
                                 height: '100%',
                             }}
                             // items={items2}
-                            items={myItems}
+                            items={menuItems}
                         />
                     </Sider>
                     <Content
