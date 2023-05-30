@@ -85,10 +85,10 @@ export const User = () => {
         setIsModalOpen(false);
     };
 
-    const onFinish = (values) => {
-        console.log('Success:', values);
+    const onFinish = (user) => {
+        console.log('Success:', user);
         const newDataTable = dataTable.concat([{
-            key: '12',
+            key: Math.floor(Math.random() * 1000) + 1,
             name: 'John Brown B',
             age: 32,
             address: 'New York No. 1 Lake Park',
@@ -124,6 +124,19 @@ export const User = () => {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
+                <Form.Item
+                    label="Username"
+                    name="username"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your username!',
+                        },
+                    ]}
+                >
+                    <Input />
+                </Form.Item>
+
                 <Form.Item
                     label="Username"
                     name="username"
