@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const { Option } = Select;
+let usersStore;
 const columns = [
     {
         title: 'Name',
@@ -47,7 +48,20 @@ const columns = [
         render: (_, record) => (
             <Space size="middle">
                 <a>Invite {record.name}</a>
-                <a>Delete</a>
+                <a onClick={() => {
+                    console.log('delete row', record.key);
+
+                    const findRowByKey = (key) => {
+                        for(let i = 0; i < usersStore.listUser.length; i++){
+                            if (usersStore.listUser[i].key == key) return i;
+                        }
+                    }
+                    console.log('findRowByKey ', findRowByKey(record.key));
+                    const newData = usersStore.listUser.slice().splice(findRowByKey(record.key, 1));
+                    console.log('newdata ',newData);
+                    console.log(usersStore.listUser);
+
+                }}>Delete</a>
             </Space>
         ),
     },
@@ -55,7 +69,7 @@ const columns = [
 
 export const UserProfile = () => {
     const dispatch = useDispatch();
-    const usersStore = useSelector((state) => state.users);
+    usersStore = useSelector((state) => state.users);
     console.log(usersStore.listUser);
 
 

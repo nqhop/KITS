@@ -53,5 +53,5 @@ export const users = {
         selectCount() {
             return slice(state => state.count);
         },
-    }),
+    })
 };
