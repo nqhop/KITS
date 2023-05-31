@@ -1,5 +1,5 @@
 import MyLayout from "../../components/MyLayout"
-import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input } from 'antd';
+import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input, InputNumber, Select } from 'antd';
 import { useState } from "react";
 const columns = [
     {
@@ -49,6 +49,22 @@ const columns = [
         ),
     },
 ];
+const listOptions = ['nice', 'developer', 'teacher', 'cool', 'loser']
+const options = [];
+for (let i = 0; i < listOptions.length; i++) {
+    options.push({
+        label: listOptions[i],
+        value: listOptions[i]
+    })
+}
+// const options = [];
+// for (let i = 10; i < 36; i++) {
+//     options.push({
+//         label: i.toString(36) + i,
+//         value: i.toString(36) + i,
+//     });
+// }
+
 const data = [
     {
         key: '1',
@@ -89,9 +105,9 @@ export const UserProfile = () => {
         console.log('Success:', user);
         const newDataTable = dataTable.concat([{
             key: Math.floor(Math.random() * 1000) + 1,
-            name: 'John Brown B',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
+            name: user.username,
+            age: user.userage,
+            address: user.Useradress,
             tags: ['nice', 'developer'],
         }])
         console.log('newDataTable', newDataTable);
@@ -100,11 +116,16 @@ export const UserProfile = () => {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+
+    // for leslect tag
+    const handleChange = (value) => {
+        console.log(`selected ${value}`);
+    };
     return <div>
         <Button type="primary" onClick={showModal}>
-            Open Modal
+            Add user
         </Button>
-        <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <Modal title="Add user" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null}>
 
             <Form
                 name="basic"
@@ -138,12 +159,26 @@ export const UserProfile = () => {
                 </Form.Item>
 
                 <Form.Item
-                    label="Username"
-                    name="username"
+                    label="Userage"
+                    name="userage"
                     rules={[
                         {
                             required: true,
-                            message: 'Please input your username!',
+                            message: 'Please input your userage!',
+                        },
+                    ]}
+                >
+                    <Input />
+                    {/* <InputNumber /> */}
+                </Form.Item>
+
+                <Form.Item
+                    label="Useradress"
+                    name="Useradress"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your useradress!',
                         },
                     ]}
                 >
@@ -151,16 +186,40 @@ export const UserProfile = () => {
                 </Form.Item>
 
                 <Form.Item
-                    label="Password"
-                    name="password"
-                    rules={[
-                        {
-                            required: true,
-                            message: 'Please input your password!',
-                        },
-                    ]}
+                    label="SelectTags"
+                    name="SelectTags"
                 >
-                    <Input.Password />
+                    <Space
+                        style={{
+                            width: '100%',
+                        }}
+                        direction="vertical"
+                    >
+                        <Select
+                            // name="SelectTags"
+                            mode="multiple"
+                            allowClear
+                            style={{
+                                width: '100%',
+                            }}
+                            placeholder="Please select"
+                            defaultValue={['nice']}
+                            onChange={handleChange}
+                            options={options}
+                        />
+                        {/* <Select
+                            mode="multiple"
+                            disabled
+                            style={{
+                                width: '100%',
+                            }}
+                            placeholder="Please select"
+                            defaultValue={['a10', 'c12']}
+                            onChange={handleChange}
+                            options={options}
+                        /> */}
+                    </Space>
+                    {/* <Input /> */}
                 </Form.Item>
 
                 <Form.Item
