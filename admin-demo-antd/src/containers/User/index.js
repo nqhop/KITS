@@ -1,2 +1,2 @@
-import { User } from "./User";
-export default User;
+import { UserProfile, UserDecentralization } from "./User";
+export { UserProfile , UserDecentralization };

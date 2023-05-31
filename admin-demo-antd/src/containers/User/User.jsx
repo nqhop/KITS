@@ -72,7 +72,7 @@ const data = [
         tags: ['cool', 'teacher'],
     },
 ];
-export const User = () => {
+export const UserProfile = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [dataTable, setDataTable] = useState(data);
     const showModal = () => {
@@ -100,7 +100,7 @@ export const User = () => {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
-    return <MyLayout>
+    return <div>
         <Button type="primary" onClick={showModal}>
             Open Modal
         </Button>
@@ -187,5 +187,11 @@ export const User = () => {
             </Form>
         </Modal>
         <Table columns={columns} dataSource={dataTable} />;
-    </MyLayout>
+    </div>
+}
+
+export const UserDecentralization = () => {
+    return <div>
+        UserDecentralization
+    </div>
 }

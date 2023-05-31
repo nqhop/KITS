@@ -3,6 +3,7 @@ import { DashboardOutlined, CustomerServiceOutlined, ShoppingCartOutlined, Barco
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { NavLink } from 'react-router-dom';
 import React from 'react';
+import { useState } from "react";
 const { Header, Content, Sider } = Layout;
 const items1 = ['1', '2', '3'].map((key) => ({
     key,
@@ -24,24 +25,33 @@ const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, i
     };
 });
 
-const menuItems = [
-    {
-        key: '1',
-        icon: <DashboardOutlined />,
-        label: "Trang chủ",
-        children: [{ key: "1.1", label: <NavLink to="/dashboard/user">User</NavLink> }, { key: "1.2", label: <NavLink to="/sp">sản phẩm</NavLink> }]
-    },
-    {
-        key: '2',
-        icon: <UserOutlined />,
-        label: "User",
-        children: [{ key: "2.1", label: <NavLink to="/">show</NavLink> }, { key: "2.2", label: <NavLink to="/">Phân quyền</NavLink> }]
-    }
-]
-export const MyLayout = ({children}) => {
+
+export const MyLayout = ({ children }) => {
     const {
         token: { colorBgContainer },
     } = theme.useToken();
+
+    const menuItems = [
+        {
+            key: '1',
+            icon: <DashboardOutlined />,
+            label: "Dashboard",
+            // children: [{ key: "1.1", label: <NavLink to="/dashboard/users">User</NavLink> }, { key: "1.2", label: <NavLink to="/dashboard/users">sản phẩm</NavLink> }]
+        },
+        {
+            key: '2',
+            icon: <UserOutlined />,
+            label: "User",
+            children: [{
+                key: "2.1",
+                label: <NavLink to="/users/profile">profile</NavLink>,
+            },
+            {
+                key: "2.2",
+                label: <NavLink to="/users/decentralization">Phân quyền</NavLink>,
+            }]
+        }
+    ]
     return (
         <Layout>
             <Header
@@ -63,7 +73,8 @@ export const MyLayout = ({children}) => {
                     <Menu
                         mode="inline"
                         defaultSelectedKeys={['1']}
-                        defaultOpenKeys={['sub1']}
+                        // defaultOpenKeys={['sub1']}
+                        // openKeys={['2']}
                         style={{
                             height: '100%',
                             borderRight: 0,
