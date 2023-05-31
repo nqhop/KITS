@@ -1,6 +1,9 @@
 import MyLayout from "../../components/MyLayout"
-import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input, InputNumber, Select } from 'antd';
+import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input, InputNumber, Select} from 'antd';
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+const { Option } = Select;
 const columns = [
     {
         title: 'Name',
@@ -49,48 +52,15 @@ const columns = [
         ),
     },
 ];
-const listOptions = ['nice', 'developer', 'teacher', 'cool', 'loser']
-const options = [];
-for (let i = 0; i < listOptions.length; i++) {
-    options.push({
-        label: listOptions[i],
-        value: listOptions[i]
-    })
-}
-// const options = [];
-// for (let i = 10; i < 36; i++) {
-//     options.push({
-//         label: i.toString(36) + i,
-//         value: i.toString(36) + i,
-//     });
-// }
 
-const data = [
-    {
-        key: '1',
-        name: 'John Brown',
-        age: 32,
-        address: 'New York No. 1 Lake Park',
-        tags: ['nice', 'developer'],
-    },
-    {
-        key: '2',
-        name: 'Jim Green',
-        age: 42,
-        address: 'London No. 1 Lake Park',
-        tags: ['loser'],
-    },
-    {
-        key: '3',
-        name: 'Joe Black',
-        age: 32,
-        address: 'Sydney No. 1 Lake Park',
-        tags: ['cool', 'teacher'],
-    },
-];
 export const UserProfile = () => {
+    const dispatch = useDispatch();
+    const usersStore = useSelector((state) => state.users);
+    console.log(usersStore.listUser);
+
+
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [dataTable, setDataTable] = useState(data);
+    // const [dataTable, setDataTable] = useState(usersStore.listUser);
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -103,7 +73,7 @@ export const UserProfile = () => {
 
     const onFinish = (user) => {
         console.log('Success:', user);
-        const newDataTable = dataTable.concat([{
+        const newDataTable = usersStore.listUser.concat([{
             key: Math.floor(Math.random() * 1000) + 1,
             name: user.username,
             age: user.userage,
@@ -111,7 +81,7 @@ export const UserProfile = () => {
             tags: ['nice', 'developer'],
         }])
         console.log('newDataTable', newDataTable);
-        setDataTable(newDataTable);
+        dispatch.users.setListUser(newDataTable);
     };
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
@@ -145,6 +115,7 @@ export const UserProfile = () => {
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
             >
+                {/* Username */}
                 <Form.Item
                     label="Username"
                     name="username"
@@ -158,6 +129,7 @@ export const UserProfile = () => {
                     <Input />
                 </Form.Item>
 
+                {/* Userage */}
                 <Form.Item
                     label="Userage"
                     name="userage"
@@ -172,6 +144,7 @@ export const UserProfile = () => {
                     {/* <InputNumber /> */}
                 </Form.Item>
 
+                {/* Useradress */}
                 <Form.Item
                     label="Useradress"
                     name="Useradress"
@@ -187,7 +160,7 @@ export const UserProfile = () => {
 
                 <Form.Item
                     label="SelectTags"
-                    name="SelectTags"
+                    // name="Select"
                 >
                     <Space
                         style={{
@@ -196,7 +169,7 @@ export const UserProfile = () => {
                         direction="vertical"
                     >
                         <Select
-                            // name="SelectTags"
+                            name="SelectTags"
                             mode="multiple"
                             allowClear
                             style={{
@@ -205,19 +178,14 @@ export const UserProfile = () => {
                             placeholder="Please select"
                             defaultValue={['nice']}
                             onChange={handleChange}
-                            options={options}
-                        />
-                        {/* <Select
-                            mode="multiple"
-                            disabled
-                            style={{
-                                width: '100%',
-                            }}
-                            placeholder="Please select"
-                            defaultValue={['a10', 'c12']}
-                            onChange={handleChange}
-                            options={options}
-                        /> */}
+                        >
+                            <Option value="nice" label="nice"/>
+                            <Option value="developer" label="developer"/>
+                            <Option value="teacher" label="teacher"/>
+                            <Option value="cool" label="cool"/>
+                            <Option value="loser" label="loser"/>
+                        </Select>
+
                     </Space>
                     {/* <Input /> */}
                 </Form.Item>
@@ -245,7 +213,7 @@ export const UserProfile = () => {
                 </Form.Item>
             </Form>
         </Modal>
-        <Table columns={columns} dataSource={dataTable} />;
+        <Table columns={columns} dataSource={usersStore.listUser} />;
     </div>
 }
 
