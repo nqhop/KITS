@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from "react-redux";
 const { Option } = Select;
 let usersStore;
 let dispatch;
+
+const defaultSelected = ['nice']
+let handleChangeSelectedTags = defaultSelected;
 const columns = [
     {
         title: 'Name',
@@ -88,12 +91,13 @@ export const UserProfile = () => {
 
     const onFinish = (user) => {
         console.log('Success:', user);
+        console.log('handleChangeSelectedTags', handleChangeSelectedTags);
         const newDataTable = usersStore.listUser.concat([{
             key: Math.floor(Math.random() * 1000) + 1,
             name: user.username,
             age: user.userage,
             address: user.Useradress,
-            tags: ['nice', 'developer'],
+            tags: handleChangeSelectedTags,
         }])
         console.log('newDataTable', newDataTable);
         dispatch.users.setListUser(newDataTable);
@@ -105,6 +109,7 @@ export const UserProfile = () => {
     // for leslect tag
     const handleChange = (value) => {
         console.log(`selected ${value}`);
+        handleChangeSelectedTags = value;
     };
     return <div>
         <Button type="primary" onClick={showModal}>
@@ -173,9 +178,10 @@ export const UserProfile = () => {
                     <Input />
                 </Form.Item>
 
+                {/* SelectTags */}
                 <Form.Item
                     label="SelectTags"
-                // name="Select"
+                    name="Select"
                 >
                     <Space
                         style={{
@@ -191,7 +197,7 @@ export const UserProfile = () => {
                                 width: '100%',
                             }}
                             placeholder="Please select"
-                            defaultValue={['nice']}
+                            defaultValue={defaultSelected}
                             onChange={handleChange}
                         >
                             <Option value="nice" label="nice" />
