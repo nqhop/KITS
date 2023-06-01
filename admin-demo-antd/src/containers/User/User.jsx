@@ -1,10 +1,11 @@
 import MyLayout from "../../components/MyLayout"
-import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input, InputNumber, Select} from 'antd';
+import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input, InputNumber, Select } from 'antd';
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const { Option } = Select;
 let usersStore;
+let dispatch;
 const columns = [
     {
         title: 'Name',
@@ -52,15 +53,16 @@ const columns = [
                     console.log('delete row', record.key);
 
                     const findRowByKey = (key) => {
-                        for(let i = 0; i < usersStore.listUser.length; i++){
+                        for (let i = 0; i < usersStore.listUser.length; i++) {
                             if (usersStore.listUser[i].key == key) return i;
                         }
                     }
                     console.log('findRowByKey ', findRowByKey(record.key));
-                    const newData = usersStore.listUser.slice().splice(findRowByKey(record.key, 1));
-                    console.log('newdata ',newData);
-                    console.log(usersStore.listUser);
+                    const newData = usersStore.listUser.slice();
+                    newData.splice(findRowByKey(record.key), 1);
+                    console.log('newdata ', newData);
 
+                    dispatch.users.setListUser(newData);
                 }}>Delete</a>
             </Space>
         ),
@@ -68,13 +70,12 @@ const columns = [
 ];
 
 export const UserProfile = () => {
-    const dispatch = useDispatch();
+    dispatch = useDispatch();
     usersStore = useSelector((state) => state.users);
     console.log(usersStore.listUser);
 
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    // const [dataTable, setDataTable] = useState(usersStore.listUser);
     const showModal = () => {
         setIsModalOpen(true);
     };
@@ -174,7 +175,7 @@ export const UserProfile = () => {
 
                 <Form.Item
                     label="SelectTags"
-                    // name="Select"
+                // name="Select"
                 >
                     <Space
                         style={{
@@ -193,11 +194,11 @@ export const UserProfile = () => {
                             defaultValue={['nice']}
                             onChange={handleChange}
                         >
-                            <Option value="nice" label="nice"/>
-                            <Option value="developer" label="developer"/>
-                            <Option value="teacher" label="teacher"/>
-                            <Option value="cool" label="cool"/>
-                            <Option value="loser" label="loser"/>
+                            <Option value="nice" label="nice" />
+                            <Option value="developer" label="developer" />
+                            <Option value="teacher" label="teacher" />
+                            <Option value="cool" label="cool" />
+                            <Option value="loser" label="loser" />
                         </Select>
 
                     </Space>
