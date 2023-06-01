@@ -1,15 +1,8 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, AreaChart, Tooltip, Area } from 'recharts';
 import { PieChart, Pie } from "recharts";
 import styled from 'styled-components';
-const data = [
-    { name: '12:00', uv: 400, pv: 2400, amt: 2400 },
-    { name: '12:00', uv: 300, pv: 2400, amt: 2400 },
-    { name: '12:00', uv: 300, pv: 2400, amt: 2400 },
-    { name: '12:00', uv: 400, pv: 2400, amt: 2400 },
-    { name: '12:00', uv: 150, pv: 2400, amt: 2400 },
-    { name: '12:00', uv: 300, pv: 2400, amt: 2400 },
-];
 
+import { MyLineChart } from '../Charts';
 
 const data01 = [
     { name: 'Group A', value: 400 },
@@ -50,30 +43,10 @@ const StyledDashboard = styled.div`
 
 export const Dashboard = () => {
     return <StyledDashboard>
-        <defs>
-            <linearGradient id="colorUv" x1="0" y1="1" x2="0" y2="0">
-                <stop offset="0%" stopColor="rgb(255,255,0)" stopOpacity={1} />
-                <stop offset="100%" stopColor="rgb(255,0,0)" stopOpacity={1} />
-            </linearGradient>
 
-            <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#fa0101" stopOpacity={0} />
-            </linearGradient>
-        </defs>
-
-        <LineChart width={800} height={400} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-            {/* <Line type="monotone" dot={false} dataKey="uv" fill="url(#colorUv)"/> */}
-            {/* <Line type="monotone" dot={false} strokeWidth={5} dataKey="uv" fill="url(#colorUv)" /> */}
-
-            <Line type="monotone" dataKey="uv" dot={false} strokeWidth={5} stroke="#82ca9d" fill="url(#colorUv)"/>
-            <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <XAxis dataKey="name" />
-            <YAxis />
-        </LineChart>
-
+        <MyLineChart />
         {/* TwoLevelPieChart */}
-        <PieChart width={400} height={400}>
+        {/* <PieChart width={400} height={400}>
             <Pie
                 data={data01}
                 dataKey="value"
@@ -102,6 +75,7 @@ export const Dashboard = () => {
                 fill="#82ca9d"
                 label
             />
-        </PieChart>
+        </PieChart> */}
+
     </StyledDashboard>
 }
