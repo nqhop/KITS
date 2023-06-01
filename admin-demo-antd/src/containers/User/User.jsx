@@ -7,80 +7,88 @@ const { Option } = Select;
 let usersStore;
 let dispatch;
 
+let addUser = true;
 const defaultSelected = ['nice']
 let handleChangeSelectedTags = defaultSelected;
-const columns = [
-    {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
-        render: (text) => <a>{text}</a>,
-    },
-    {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-    },
-    {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
-    },
-    {
-        title: 'Tags',
-        key: 'tags',
-        dataIndex: 'tags',
-        render: (_, { tags }) => (
-            <>
-                {tags.map((tag) => {
-                    let color = tag.length > 5 ? 'geekblue' : 'green';
-                    if (tag === 'loser') {
-                        color = 'volcano';
-                    }
-                    return (
-                        <Tag color={color} key={tag}>
-                            {tag.toUpperCase()}
-                        </Tag>
-                    );
-                })}
-            </>
-        ),
-    },
-    {
-        title: 'Action',
-        key: 'action',
-        render: (_, record) => (
-            <Space size="middle">
-                <a>Invite {record.name}</a>
-                <a onClick={() => {
-                    console.log('delete row', record.key);
+// const columns = [
+//     {
+//         title: 'Name',
+//         dataIndex: 'name',
+//         key: 'name',
+//         render: (text) => <a>{text}</a>,
+//     },
+//     {
+//         title: 'Age',
+//         dataIndex: 'age',
+//         key: 'age',
+//     },
+//     {
+//         title: 'Address',
+//         dataIndex: 'address',
+//         key: 'address',
+//     },
+//     {
+//         title: 'Tags',
+//         key: 'tags',
+//         dataIndex: 'tags',
+//         render: (_, { tags }) => (
+//             <>
+//                 {tags.map((tag) => {
+//                     let color = tag.length > 5 ? 'geekblue' : 'green';
+//                     if (tag === 'loser') {
+//                         color = 'volcano';
+//                     }
+//                     return (
+//                         <Tag color={color} key={tag}>
+//                             {tag.toUpperCase()}
+//                         </Tag>
+//                     );
+//                 })}
+//             </>
+//         ),
+//     },
+//     {
+//         title: 'Action',
+//         key: 'action',
+//         render: (_, record) => (
+//             <Space size="middle">
+//                 <a
+//                     onClick={() => {
+//                         const userEditIndex = usersStore.listUser.indexOf(record);
+//                         console.log('userEditIndex ',userEditIndex);
+//                     }}
 
-                    const findRowByKey = (key) => {
-                        for (let i = 0; i < usersStore.listUser.length; i++) {
-                            if (usersStore.listUser[i].key == key) return i;
-                        }
-                    }
-                    console.log('findRowByKey ', findRowByKey(record.key));
-                    const newData = usersStore.listUser.slice();
-                    newData.splice(findRowByKey(record.key), 1);
-                    console.log('newdata ', newData);
+//                 >Edit</a>
+//                 <a onClick={() => {
+//                     console.log('delete row', record.key);
+//                     // showModal(false);
+//                     const findRowByKey = (key) => {
+//                         for (let i = 0; i < usersStore.listUser.length; i++) {
+//                             if (usersStore.listUser[i].key == key) return i;
+//                         }
+//                     }
+//                     console.log('findRowByKey ', findRowByKey(record.key));
+//                     const newData = usersStore.listUser.slice();
+//                     newData.splice(findRowByKey(record.key), 1);
+//                     console.log('newdata ', newData);
 
-                    dispatch.users.setListUser(newData);
-                }}>Delete</a>
-            </Space>
-        ),
-    },
-];
+//                     dispatch.users.setListUser(newData);
+//                 }}>Delete</a>
+//             </Space>
+//         ),
+//     },
+// ];
 
 export const UserProfile = () => {
     dispatch = useDispatch();
     usersStore = useSelector((state) => state.users);
-    console.log(usersStore.listUser);
-
+    // console.log(usersStore.listUser);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const showModal = () => {
+    const [editingRow, setEdittingRow] = useState(null);
+    const showModal = (isAddUser) => {
         setIsModalOpen(true);
+        addUser = isAddUser;
     };
     const handleOk = () => {
         setIsModalOpen(false);
@@ -90,8 +98,8 @@ export const UserProfile = () => {
     };
 
     const onFinish = (user) => {
-        console.log('Success:', user);
-        console.log('handleChangeSelectedTags', handleChangeSelectedTags);
+        // console.log('Success:', user);
+        // console.log('handleChangeSelectedTags', handleChangeSelectedTags);
         const newDataTable = usersStore.listUser.concat([{
             key: Math.floor(Math.random() * 1000) + 1,
             name: user.username,
@@ -108,14 +116,85 @@ export const UserProfile = () => {
 
     // for leslect tag
     const handleChange = (value) => {
-        console.log(`selected ${value}`);
+        // console.log(`selected ${value}`);
         handleChangeSelectedTags = value;
     };
+
+    const columns = [
+        {
+            title: 'Name',
+            dataIndex: 'name',
+            key: 'name',
+            render: (text) => <a>{text}</a>,
+        },
+        {
+            title: 'Age',
+            dataIndex: 'age',
+            key: 'age',
+        },
+        {
+            title: 'Address',
+            dataIndex: 'address',
+            key: 'address',
+        },
+        {
+            title: 'Tags',
+            key: 'tags',
+            dataIndex: 'tags',
+            render: (_, { tags }) => (
+                <>
+                    {tags.map((tag) => {
+                        let color = tag.length > 5 ? 'geekblue' : 'green';
+                        if (tag === 'loser') {
+                            color = 'volcano';
+                        }
+                        return (
+                            <Tag color={color} key={tag}>
+                                {tag.toUpperCase()}
+                            </Tag>
+                        );
+                    })}
+                </>
+            ),
+        },
+        {
+            title: 'Action',
+            key: 'action',
+            render: (_, record) => (
+                <Space size="middle">
+                    <a
+                        onClick={() => {
+                            const userEditIndex = usersStore.listUser.indexOf(record);
+                            console.log('userEditIndex ', userEditIndex);
+                            console.log('record.key ', record.key);
+                            // setEdittingRow(record.key);
+                        }}
+
+                    >Edit</a>
+                    <a onClick={() => {
+                        console.log('delete row', record.key);
+                        const findRowByKey = (key) => {
+                            for (let i = 0; i < usersStore.listUser.length; i++) {
+                                if (usersStore.listUser[i].key == key) return i;
+                            }
+                        }
+                        console.log('findRowByKey ', findRowByKey(record.key));
+                        const newData = usersStore.listUser.slice();
+                        newData.splice(findRowByKey(record.key), 1);
+                        console.log('newdata ', newData);
+
+                        dispatch.users.setListUser(newData);
+                    }}>Delete</a>
+                </Space>
+            ),
+        },
+    ];
+
     return <div>
-        <Button type="primary" onClick={showModal}>
+        <Button type="primary" onClick={() => showModal(true)}>
             Add user
         </Button>
-        <Modal title="Add user" open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null}>
+        <Modal title={addUser ? 'Add user' : 'edit user'} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null}>
 
             <Form
                 name="basic"
@@ -146,7 +225,7 @@ export const UserProfile = () => {
                         },
                     ]}
                 >
-                    <Input />
+                    <Input defaultValue="26888888" />
                 </Form.Item>
 
                 {/* Userage */}

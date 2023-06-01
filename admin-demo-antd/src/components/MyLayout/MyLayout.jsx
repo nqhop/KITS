@@ -36,6 +36,7 @@ export const MyLayout = ({ children }) => {
             key: '1',
             icon: <DashboardOutlined />,
             label: "Dashboard",
+            label: <NavLink to="/dashboard">Dashboard</NavLink>,
             // children: [{ key: "1.1", label: <NavLink to="/dashboard/users">User</NavLink> }, { key: "1.2", label: <NavLink to="/dashboard/users">sản phẩm</NavLink> }]
         },
         {
@@ -44,7 +45,7 @@ export const MyLayout = ({ children }) => {
             label: "User",
             children: [{
                 key: "2.1",
-                label: <NavLink to="/users/profile">profile</NavLink>,
+                label: <NavLink to="/users/profile">profile</NavLink>,label: <NavLink to="/users/profile">profile</NavLink>,
             },
             {
                 key: "2.2",
