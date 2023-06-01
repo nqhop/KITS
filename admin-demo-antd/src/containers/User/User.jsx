@@ -2,6 +2,7 @@ import MyLayout from "../../components/MyLayout"
 import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input, InputNumber, Select } from 'antd';
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Excel from "../../components/Excel";
 
 const { Option } = Select;
 let usersStore;
@@ -194,6 +195,58 @@ export const UserProfile = () => {
         <Button type="primary" onClick={() => showModal(true)}>
             Add user
         </Button>
+
+        <Excel
+            fileName="export-user"
+            data={[
+                {
+                    columns: [
+                        {
+                            title: "User key",
+                            dataIndex: "key",
+                            width: 15,
+                        },
+                        {
+                            title: "Name",
+                            dataIndex: "name",
+                            width: 20,
+                        },
+                        {
+                            title: "age",
+                            dataIndex: "age",
+                            width: 10,
+                        },
+                        {
+                            title: "address",
+                            dataIndex: "address",
+                            width: 50,
+                        },
+                    ],
+                    data: usersStore.listUser,
+                    tabName: "info",
+                },
+                {
+                    columns: [
+                        {
+                            title: "Name",
+                            dataIndex: "username",
+                            width: 30,
+                        },
+                        {
+                            title: "Phone",
+                            dataIndex: "phone",
+                            width: 30,
+                        },
+                    ],
+                    data: usersStore.listUser,
+                    tabName: "contact",
+                },
+            ]}
+        >
+            <Button>Export users</Button>
+        </Excel>
+
+
         <Modal title={addUser ? 'Add user' : 'edit user'} open={isModalOpen} onOk={handleOk} onCancel={handleCancel} footer={null}>
 
             <Form
