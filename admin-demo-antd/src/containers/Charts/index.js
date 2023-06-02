@@ -1,2 +1,3 @@
 import { MyLineChart } from "./MyLineChart";
-export { MyLineChart };
+import { MyPieChart } from "./MyPieChart";
+export { MyLineChart, MyPieChart };

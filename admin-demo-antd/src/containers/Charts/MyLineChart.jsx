@@ -30,8 +30,8 @@ export const MyLineChart = () => {
             <Line type="monotone" dataKey="uv" dot={false} strokeWidth={5} stroke="url(#colorUv)" />
             <Tooltip />
             <CartesianGrid stroke="#ccc" vertical={false} />
-            <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{ fill: "#ccc" }}/>
-            <YAxis dataKey="uv" axisLine={false} tickLine={false} tick={{ fill: "#ccc" }}/>
+            <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{ fill: "#ccc", fontSize: 12  }}/>
+            <YAxis dataKey="uv" axisLine={false} tickLine={false} tick={{ fill: "#ccc", fontSize: 12 }}/>
         </LineChart>
     </>
 }

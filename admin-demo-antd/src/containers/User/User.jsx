@@ -3,6 +3,7 @@ import { Space, Table, Tag, Button, Modal, Checkbox, Form, Input, InputNumber, S
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Excel from "../../components/Excel";
+import { useEffect } from "react";
 
 const { Option } = Select;
 let usersStore;
@@ -11,79 +12,19 @@ let dispatch;
 let addUser = true;
 const defaultSelected = ['nice']
 let handleChangeSelectedTags = defaultSelected;
-// const columns = [
-//     {
-//         title: 'Name',
-//         dataIndex: 'name',
-//         key: 'name',
-//         render: (text) => <a>{text}</a>,
-//     },
-//     {
-//         title: 'Age',
-//         dataIndex: 'age',
-//         key: 'age',
-//     },
-//     {
-//         title: 'Address',
-//         dataIndex: 'address',
-//         key: 'address',
-//     },
-//     {
-//         title: 'Tags',
-//         key: 'tags',
-//         dataIndex: 'tags',
-//         render: (_, { tags }) => (
-//             <>
-//                 {tags.map((tag) => {
-//                     let color = tag.length > 5 ? 'geekblue' : 'green';
-//                     if (tag === 'loser') {
-//                         color = 'volcano';
-//                     }
-//                     return (
-//                         <Tag color={color} key={tag}>
-//                             {tag.toUpperCase()}
-//                         </Tag>
-//                     );
-//                 })}
-//             </>
-//         ),
-//     },
-//     {
-//         title: 'Action',
-//         key: 'action',
-//         render: (_, record) => (
-//             <Space size="middle">
-//                 <a
-//                     onClick={() => {
-//                         const userEditIndex = usersStore.listUser.indexOf(record);
-//                         console.log('userEditIndex ',userEditIndex);
-//                     }}
-
-//                 >Edit</a>
-//                 <a onClick={() => {
-//                     console.log('delete row', record.key);
-//                     // showModal(false);
-//                     const findRowByKey = (key) => {
-//                         for (let i = 0; i < usersStore.listUser.length; i++) {
-//                             if (usersStore.listUser[i].key == key) return i;
-//                         }
-//                     }
-//                     console.log('findRowByKey ', findRowByKey(record.key));
-//                     const newData = usersStore.listUser.slice();
-//                     newData.splice(findRowByKey(record.key), 1);
-//                     console.log('newdata ', newData);
-
-//                     dispatch.users.setListUser(newData);
-//                 }}>Delete</a>
-//             </Space>
-//         ),
-//     },
-// ];
+let userEditIndex;
 
 export const UserProfile = () => {
     dispatch = useDispatch();
     usersStore = useSelector((state) => state.users);
-    // console.log(usersStore.listUser);
+    // useEffect(() => {
+    //     if(userEditIndex >= 0){
+    //         console.log('useEffect')
+    //         Form.initialValues{{
+    //             username: 'initialValues'
+    //         }}
+    //     }
+    // })
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [editingRow, setEdittingRow] = useState(null);
@@ -120,6 +61,10 @@ export const UserProfile = () => {
         // console.log(`selected ${value}`);
         handleChangeSelectedTags = value;
     };
+
+    const editUsreName = () => {
+        return 'demo'
+    }
 
     const columns = [
         {
@@ -165,10 +110,12 @@ export const UserProfile = () => {
                 <Space size="middle">
                     <a
                         onClick={() => {
-                            const userEditIndex = usersStore.listUser.indexOf(record);
+                            userEditIndex = usersStore.listUser.indexOf(record);
+                            setEdittingRow(record);
                             console.log('userEditIndex ', userEditIndex);
                             console.log('record.key ', record.key);
                             // setEdittingRow(record.key);
+                            showModal(false);
                         }}
 
                     >Edit</a>
@@ -260,9 +207,19 @@ export const UserProfile = () => {
                 style={{
                     maxWidth: 600,
                 }}
-                initialValues={{
-                    remember: true,
-                }}
+                // initialValues={{
+                //     remember: true,
+                //     username: "username"
+                // }}
+
+                // initialValues={() => {
+                //     console.log('initialValues')
+                //     return {
+                //         username: 'aaaa',
+                //     }
+                // }}
+
+                initialValues={{...setEdittingRow}}
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
                 autoComplete="off"
@@ -278,7 +235,7 @@ export const UserProfile = () => {
                         },
                     ]}
                 >
-                    <Input defaultValue="26888888" />
+                    <Input />
                 </Form.Item>
 
                 {/* Userage */}
